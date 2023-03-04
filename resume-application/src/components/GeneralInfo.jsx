@@ -1,101 +1,101 @@
 import React from 'react'
 import '../styles/GeneralInfo.css'
 
-function GeneralInfo() {
+function GeneralInfo(props) {
 
-  const [generalInfo, setGeneralInfo] = React.useState({
-    firstName: '',
-    lastName: '',
-    title: '',
-    photo: '',
-    address: '',
-    phone: '',
-    email: '',
-    description: '',
-  })
+  // const [generalInfo, setGeneralInfo] = React.useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   title: '',
+  //   photo: '',
+  //   address: '',
+  //   phone: '',
+  //   email: '',
+  //   description: '',
+  // })
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    console.log(value, name)
-    setGeneralInfo(prevValues => {
-      return {
-        ...prevValues,
-        [name]: value,
-      }
-    })
-  }
+  // function handleChange(e) {
+  //   const { name, value } = e.target;
+  //   console.log(value, name)
+  //   setGeneralInfo(prevValues => {
+  //     return {
+  //       ...prevValues,
+  //       [name]: value,
+  //     }
+  //   })
+  // }
 
-  function handleSubmit() {
-    console.log('submitted')
-  }
+  // function handleSubmit() {
+  //   console.log('submitted')
+  // }
 
-  console.log(generalInfo)
+  // console.log(generalInfo)
 
   return (
     <div>
-      <form className="general-info" onSubmit={handleSubmit}>
+      <form className="general-info" onSubmit={props.submit}>
         <input 
         type="text"
         name="firstName"
         id="firstName"
         placeholder="First"
-        onChange={handleChange}
-        value={generalInfo.firstName}
+        onChange={props.click}
+        value={props.firstName}
         />
         <input 
         type="text"
         name="lastName"
         id="lastName"
         placeholder="Last"
-        onChange={handleChange}
-        value={generalInfo.lastName}
+        onChange={props.click}
+        value={props.lastName}
         />
         <input 
         type="text"
         name="title"
         id="title"
         placeholder="Senior Devleoper, Marketing Director, etc..."
-        onChange={handleChange}
-        value={generalInfo.title}
+        onChange={props.click}
+        value={props.title}
         />
         <input 
         type="file"
         name="photo"
         id="photo"
-        onChange={handleChange}
-        value={generalInfo.handleChange}
+        onChange={props.click}
+        value={props.click}
         />
         <input 
         type="text"
         name="address"
         id="address"
         placeholder="Ex. 1234 Main Street, Memphis, TN 39099"
-        onChange={handleChange}
-        value={generalInfo.address}
+        onChange={props.click}
+        value={props.address}
         />
         <input 
         type="tel"
         name="phone"
         id="phone"
         placeholder="Ex. 615-555-5589"
-        onChange={handleChange}
-        value={generalInfo.phone}
+        onChange={props.click}
+        value={props.phone}
         />
         <input 
         type="email"
         name="email"
         id="email"
         placeholder="Ex. 'username@sample.com"
-        onChange={handleChange}
-        value={generalInfo.email}
+        onChange={props.click}
+        value={props.email}
         />
         <input 
         type="textarea"
         name="description"
         id="description"
         placeholder="Enter details about the position here..."
-        onChange={handleChange}
-        value={generalInfo.description}
+        onChange={props.click}
+        value={props.description}
         />
         <button>Add</button>
       </form>
