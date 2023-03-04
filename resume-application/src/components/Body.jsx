@@ -15,7 +15,7 @@ function Body() {
     description: '',
   })
 
-  function handleChange(e) {
+  const handleChange = e => {
     const { name, value } = e.target;
     console.log(value, name)
     setGeneralInfo(prevValues => {
@@ -26,16 +26,19 @@ function Body() {
     })
   }
 
-  function handleSubmit() {
+  const handleSubmit = e => {
+    e.preventDefault();
     console.log('submitted')
   }
+
+  console.log(generalInfo)
 
   return (
     <div className="body flex justify-evenly my-8 ">
       <div className="left-side">
         <GeneralInfo 
         generalInfoData={generalInfo}
-        clicks={handleChange}
+        click={handleChange}
         submit={handleSubmit}
          />
       </div>

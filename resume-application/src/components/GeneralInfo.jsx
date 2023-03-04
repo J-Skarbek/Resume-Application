@@ -3,34 +3,6 @@ import '../styles/GeneralInfo.css'
 
 function GeneralInfo(props) {
 
-  // const [generalInfo, setGeneralInfo] = React.useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   title: '',
-  //   photo: '',
-  //   address: '',
-  //   phone: '',
-  //   email: '',
-  //   description: '',
-  // })
-
-  // function handleChange(e) {
-  //   const { name, value } = e.target;
-  //   console.log(value, name)
-  //   setGeneralInfo(prevValues => {
-  //     return {
-  //       ...prevValues,
-  //       [name]: value,
-  //     }
-  //   })
-  // }
-
-  // function handleSubmit() {
-  //   console.log('submitted')
-  // }
-
-  // console.log(generalInfo)
-
   return (
     <div>
       <form className="general-info" onSubmit={props.submit}>
@@ -40,7 +12,7 @@ function GeneralInfo(props) {
         id="firstName"
         placeholder="First"
         onChange={props.click}
-        value={props.firstName}
+        value={props.generalInfoData.firstName}
         />
         <input 
         type="text"
@@ -48,7 +20,7 @@ function GeneralInfo(props) {
         id="lastName"
         placeholder="Last"
         onChange={props.click}
-        value={props.lastName}
+        value={props.generalInfoData.lastName}
         />
         <input 
         type="text"
@@ -56,14 +28,14 @@ function GeneralInfo(props) {
         id="title"
         placeholder="Senior Devleoper, Marketing Director, etc..."
         onChange={props.click}
-        value={props.title}
+        value={props.generalInfoData.title}
         />
         <input 
         type="file"
         name="photo"
         id="photo"
         onChange={props.click}
-        value={props.click}
+        value={props.generalInfoData.photo}
         />
         <input 
         type="text"
@@ -71,7 +43,7 @@ function GeneralInfo(props) {
         id="address"
         placeholder="Ex. 1234 Main Street, Memphis, TN 39099"
         onChange={props.click}
-        value={props.address}
+        value={props.generalInfoData.address}
         />
         <input 
         type="tel"
@@ -79,7 +51,7 @@ function GeneralInfo(props) {
         id="phone"
         placeholder="Ex. 615-555-5589"
         onChange={props.click}
-        value={props.phone}
+        value={props.generalInfoData.phone}
         />
         <input 
         type="email"
@@ -87,7 +59,7 @@ function GeneralInfo(props) {
         id="email"
         placeholder="Ex. 'username@sample.com"
         onChange={props.click}
-        value={props.email}
+        value={props.generalInfoData.email}
         />
         <input 
         type="textarea"
@@ -95,7 +67,7 @@ function GeneralInfo(props) {
         id="description"
         placeholder="Enter details about the position here..."
         onChange={props.click}
-        value={props.description}
+        value={props.generalInfoData.description}
         />
         <button>Add</button>
       </form>
