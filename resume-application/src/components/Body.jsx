@@ -1,16 +1,16 @@
 import React from 'react';
 import GeneralInfo from './GeneralInfo';
+import ResumeDisplay from './ResumeDisplay';
 
 function Body() {
 
   return (
-    <div className="body flex justify-evenly">
+    <div className="body flex justify-evenly my-8">
       <div className="left-side">
-        <h2>test</h2>
         <GeneralInfo />
       </div>
       <div className="right-side">
-      <h2>test2</h2>
+        <ResumeDisplay />
       </div>
     </div>
   )

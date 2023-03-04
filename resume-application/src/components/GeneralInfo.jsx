@@ -29,7 +29,7 @@ function GeneralInfo() {
     console.log('submitted')
   }
 
-  // console.log(generalInfo)
+  console.log(generalInfo)
 
   return (
     <div>
