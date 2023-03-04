@@ -1,0 +1,14 @@
+.general-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.general-info > input {
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.general-info input[type="textarea"] {
+  height: 100px;
+  max-height: 100px;
+}
