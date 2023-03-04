@@ -15,10 +15,12 @@ function GeneralInfo() {
   })
 
   function handleChange(e) {
+    const { name, value } = e.target;
+    console.log(value, name)
     setGeneralInfo(prevValues => {
       return {
         ...prevValues,
-
+        [name]: value,
       }
     })
   }
@@ -38,6 +40,7 @@ function GeneralInfo() {
         id="firstName"
         placeholder="First"
         onChange={handleChange}
+        value={generalInfo.firstName}
         />
         <input 
         type="text"
@@ -45,6 +48,7 @@ function GeneralInfo() {
         id="lastName"
         placeholder="Last"
         onChange={handleChange}
+        value={generalInfo.lastName}
         />
         <input 
         type="text"
@@ -52,12 +56,14 @@ function GeneralInfo() {
         id="title"
         placeholder="Senior Devleoper, Marketing Director, etc..."
         onChange={handleChange}
+        value={generalInfo.title}
         />
         <input 
         type="file"
         name="photo"
         id="photo"
         onChange={handleChange}
+        value={generalInfo.handleChange}
         />
         <input 
         type="text"
@@ -65,6 +71,7 @@ function GeneralInfo() {
         id="address"
         placeholder="Ex. 1234 Main Street, Memphis, TN 39099"
         onChange={handleChange}
+        value={generalInfo.address}
         />
         <input 
         type="tel"
@@ -72,6 +79,7 @@ function GeneralInfo() {
         id="phone"
         placeholder="Ex. 615-555-5589"
         onChange={handleChange}
+        value={generalInfo.phone}
         />
         <input 
         type="email"
@@ -79,13 +87,15 @@ function GeneralInfo() {
         id="email"
         placeholder="Ex. 'username@sample.com"
         onChange={handleChange}
+        value={generalInfo.email}
         />
         <input 
         type="textarea"
-        name="textarea"
+        name="description"
         id="description"
         placeholder="Enter details about the position here..."
         onChange={handleChange}
+        value={generalInfo.description}
         />
         <button>Add</button>
       </form>
