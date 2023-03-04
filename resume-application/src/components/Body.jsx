@@ -36,6 +36,9 @@ function Body() {
   return (
     <div className="body flex justify-evenly my-8 ">
       <div className="left-side">
+        <h2 className="font-bold text-white text-3xl mb-4">
+          Personal Information
+        </h2>
         <GeneralInfo 
           generalInfoData={generalInfo}
           click={handleChange}
