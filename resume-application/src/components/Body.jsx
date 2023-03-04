@@ -31,19 +31,21 @@ function Body() {
     console.log('submitted')
   }
 
-  console.log(generalInfo)
+  // console.log(generalInfo)
 
   return (
     <div className="body flex justify-evenly my-8 ">
       <div className="left-side">
         <GeneralInfo 
-        generalInfoData={generalInfo}
-        click={handleChange}
-        submit={handleSubmit}
+          generalInfoData={generalInfo}
+          click={handleChange}
+          submit={handleSubmit}
          />
       </div>
       <div className="right-side">
-        <ResumeDisplay />
+        <ResumeDisplay 
+          generalInfoData={generalInfo}
+        />
       </div>
     </div>
   )
