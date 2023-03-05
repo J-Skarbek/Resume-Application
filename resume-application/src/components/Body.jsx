@@ -47,14 +47,22 @@ function Body() {
   const [workExpInfo, setWorkExpInfo] = React.useState([{
     companyName: '',
     title: '',
+    city: '',
     fromDate: '',
     toDate: '',
     jobDescription: '',
   }])
 
+
   const updateWorkInfo = e => {
     const { name, value } = e.target;
-    console.log(name, value)
+    console.log(name, value);
+    setWorkExpInfo(prevValues => {
+      return [{
+        ...prevValues,
+        [name]: value
+      }]
+    })
   }
 
   // console.log(generalInfo)
@@ -70,6 +78,9 @@ function Body() {
           click={handleChange}
           submit={handleSubmit}
          />
+         <h2 className="font-bold text-white text-3xl mt-12 mb-4">
+          Work Experience
+        </h2>
         <WorkInput
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
@@ -84,6 +95,7 @@ function Body() {
       <div className="right-side">
         <ResumeDisplay 
           generalInfoData={generalInfo}
+          workInfo={workExpInfo}
           // click={handleChange}
         />
       </div>

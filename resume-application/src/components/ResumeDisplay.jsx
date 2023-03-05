@@ -17,7 +17,26 @@ function ResumeDisplay(props) {
           <h3>Description</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
-          <p>{props.generalInfoData.experience}</p>
+            <div className="prior-job-details">
+              <div className="flex justify-between">
+                <div className="text-details flex-column justify-start font-semibold">
+                  <p className="prior-company-name">{props.workInfo.companyName}Verizone Wireless</p>
+                  <p className="prior-comapny-title">{props.workInfo.title} Sales Slave</p>
+                </div>
+                <div>
+                  <p className="prior-company-city">{props.workInfo.city}Nashville, TN</p>
+                </div>
+              </div>
+              <div className="flex">
+                <p className="prior-company-fromDate">{props.workInfo.fromDate}From Date - </p>
+                <p className="prior-company-toDate">{props.workInfo.toDate} To Date</p>
+              </div>
+              <div>
+                <p className="prior-company-description">
+                Lorim ipsume odloar dolar et.....lorim ipsum doloar et lorim ipsum dolar et
+                </p>
+              </div>
+            </div>
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>
         </div>

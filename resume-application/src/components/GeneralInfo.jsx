@@ -4,7 +4,7 @@ import '../styles/GeneralInfo.css'
 function GeneralInfo(props) {
 
   return (
-    <div>
+    <div className="personal-info">
       <form className="general-info" onSubmit={props.submit}>
         <label htmlFor="firstName">First Name</label>
         <input 
