@@ -1,9 +1,21 @@
 import React from 'react';
+// import Datepicker from "react-tailwindcss-datepicker";
 import GeneralInfo from './GeneralInfo';
 import WorkInput from './WorkInput';
 import ResumeDisplay from './ResumeDisplay';
 
 function Body() {
+
+  // const [dayPicker, setDayPicker] = React.useState({
+  //   startDate: new Date(),
+  //   endDate: new Date().setMonth(11)
+  // });
+
+  // const handleDayChange = (newValue) => {
+  //   console.log("newValue:", newValue);
+  //   setDayPicker(newValue);
+  // }
+
 
   const [generalInfo, setGeneralInfo] = React.useState({
     firstName: '',
@@ -61,7 +73,13 @@ function Body() {
         <WorkInput
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
+          // dateValue={dayPicker}
+          // dateValueChange={handleDayChange}
         />
+        {/* <Datepicker
+          value={dayPicker}
+          onChange={handleDayChange}
+        /> */}
       </div>
       <div className="right-side">
         <ResumeDisplay 

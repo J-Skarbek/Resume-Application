@@ -35,21 +35,25 @@ function WorkInput(props) {
         />
         <label htmlFor="fromDate">From:</label>
         <input 
-        type="date"
+        type="text"
         name="fromDate"
         id="fromDate"
         placeholder="Ex. 01/22/2016"
         onChange={props.updateInfo}
-        value={props.workInfo.fromDate}
+        // onChange={props.Change}
+        // value={props.workInfo.fromDate}
+        value={props.dateValue}
         />
          <label htmlFor="toDate">From:</label>
         <input 
-        type="date"
+        type="text"
         name="toDate"
         id="toDate"
         placeholder="Ex. 07/31/2022"
         onChange={props.updateInfo}
+        // onChange={props.Change}
         value={props.workInfo.toDate}
+        // value={props.dateValue}
         />        
         <label htmlFor="jobDescription">Job Details</label>
         <input 
