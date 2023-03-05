@@ -32,6 +32,19 @@ function Body() {
     console.log('submitted')
   }
 
+  const [workExpInfo, setWorkExpInfo] = React.useState([{
+    companyName: '',
+    title: '',
+    fromDate: '',
+    toDate: '',
+    jobDescription: '',
+  }])
+
+  const updateWorkInfo = e => {
+    const { name, value } = e.target;
+    console.log(name, value)
+  }
+
   // console.log(generalInfo)
 
   return (
@@ -46,6 +59,8 @@ function Body() {
           submit={handleSubmit}
          />
         <WorkInput
+          workInfo={workExpInfo}
+          updateInfo={updateWorkInfo}
         />
       </div>
       <div className="right-side">

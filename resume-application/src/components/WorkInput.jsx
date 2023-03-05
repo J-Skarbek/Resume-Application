@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WorkInput() {
+function WorkInput(props) {
 
   return (
     <div className="work-exp">
@@ -12,8 +12,8 @@ function WorkInput() {
         name="position"
         id="position"
         placeholder="position"
-        // onChange={props.click}
-        // value={props.generalInfoData.firstName}
+        onChange={props.updateInfo}
+        value={props.workInfo.title}
         />
         <label htmlFor="company">Company</label>
         <input 
@@ -21,8 +21,8 @@ function WorkInput() {
         name="company"
         id="company"
         placeholder="company"
-        // onChange={props.click}
-        // value={props.generalInfoData.lastName}
+        onChange={props.updateInfo}
+        value={props.workInfo.companyName}
         />
         <label htmlFor="city">City</label>
         <input 
@@ -30,8 +30,8 @@ function WorkInput() {
         name="city"
         id="city"
         placeholder="City"
-        // onChange={props.click}
-        // value={props.generalInfoData.title}
+        onChange={props.updateInfo}
+        value={props.workInfo.city}
         />
         <label htmlFor="fromDate">From:</label>
         <input 
@@ -39,8 +39,8 @@ function WorkInput() {
         name="fromDate"
         id="fromDate"
         placeholder="Ex. 01/22/2016"
-        // onChange={props.click}
-        // value={props.generalInfoData.address}
+        onChange={props.updateInfo}
+        value={props.workInfo.fromDate}
         />
          <label htmlFor="toDate">From:</label>
         <input 
@@ -48,17 +48,17 @@ function WorkInput() {
         name="toDate"
         id="toDate"
         placeholder="Ex. 07/31/2022"
-        // onChange={props.click}
-        // value={props.generalInfoData.address}
+        onChange={props.updateInfo}
+        value={props.workInfo.toDate}
         />        
-        <label htmlFor="jobDetails">Job Details</label>
+        <label htmlFor="jobDescription">Job Details</label>
         <input 
         type="textarea"
-        name="djobDetails"
-        id="jobDetails"
+        name="jobDescription"
+        id="jobDescription"
         placeholder="Enter details about the position here..."
-        // onChange={props.click}
-        // value={props.generalInfoData.description}
+        onChange={props.updateInfo}
+        value={props.workInfo.jobDescription}
         />
         <button type="submit">Add</button>
         <button type="button">Delete</button>
