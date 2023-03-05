@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneralInfo from './GeneralInfo';
+import WorkInput from './WorkInput';
 import ResumeDisplay from './ResumeDisplay';
 
 function Body() {
@@ -44,10 +45,13 @@ function Body() {
           click={handleChange}
           submit={handleSubmit}
          />
+        <WorkInput
+        />
       </div>
       <div className="right-side">
         <ResumeDisplay 
           generalInfoData={generalInfo}
+          // click={handleChange}
         />
       </div>
     </div>
