@@ -15,8 +15,7 @@ function Body() {
   //   console.log("newValue:", newValue);
   //   setDayPicker(newValue);
   // }
-
-
+ 
   const [generalInfo, setGeneralInfo] = React.useState({
     firstName: '',
     lastName: '',
@@ -30,7 +29,7 @@ function Body() {
 
   const handleChange = e => {
     const { name, value } = e.target;
-    console.log(value, name)
+    // console.log(value, name)
     setGeneralInfo(prevValues => {
       return {
         ...prevValues,
@@ -57,7 +56,7 @@ function Body() {
   //handles updating an individual job experience details
   const updateWorkInfo = e => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setWorkExpInfo(prevValues => {
       return {
         ...prevValues, 
@@ -72,7 +71,8 @@ function Body() {
   //adds new prior-job experience to the array of allExp
   function addNewJobExp(e) {
     e.preventDefault();
-    updateAllExp(prevExp => [...prevExp, workExpInfo])
+    updateAllExp(prevExp => [...prevExp, workExpInfo]);
+    // console.log(allExp);
   }
 
   //display job deails from the allExp array
@@ -84,22 +84,9 @@ function Body() {
     </div>
   })
 
-  // const updateWorkInfo = e => {
-  //   const { name, value } = e.target;
-  //   console.log(name, value);
-  //   setWorkExpInfo(prevValues => {
-  //     return [
-  //       ...prevValues,
-  //       { [name]: value, 
-        
-  //       }
-  //     ]
-  //   })
-  // }
-
   // console.log(generalInfo)
   // console.log(workExpInfo)
-  console.log(allExp)
+  // console.log(allExp)
 
   return (
     <div className="body flex justify-evenly my-8 ">
