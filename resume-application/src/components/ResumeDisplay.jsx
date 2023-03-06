@@ -36,6 +36,7 @@ function ResumeDisplay(props) {
                 Lorim ipsume odloar dolar et.....lorim ipsum doloar et lorim ipsum dolar et
                 </p>
               </div>
+              <div>{props.displayAllJobs}</div>
             </div>
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>
