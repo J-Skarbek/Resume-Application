@@ -14,29 +14,27 @@ function ResumeDisplay(props) {
       </div>
       <div className="resume-body flex bg-white/25 p-6 text-white">
         <div className="resume-detailed-text flex-column px-8 text-xl">
-          <h3>Description</h3>
+          <h3>About</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
             <div className="prior-job-details">
               <div className="flex justify-between">
                 <div className="text-details flex-column justify-start font-semibold">
-                  <p className="prior-company-name">{props.workInfo.companyName}Verizone Wireless</p>
-                  <p className="prior-comapny-title">{props.workInfo.title} Sales Slave</p>
+                  <p className="prior-company-name">{props.workInfo.companyName}</p>
+                  <p className="prior-comapny-title">{props.workInfo.title}</p>
                 </div>
                 <div>
-                  <p className="prior-company-city">{props.workInfo.city}Nashville, TN</p>
+                  <p className="prior-company-city">{props.workInfo.city}</p>
                 </div>
               </div>
               <div className="flex">
-                <p className="prior-company-fromDate">{props.workInfo.fromDate}From Date - </p>
-                <p className="prior-company-toDate">{props.workInfo.toDate} To Date</p>
+                <p className="prior-company-fromDate">{props.workInfo.fromDate}</p>
+                <p className="prior-company-toDate">{props.workInfo.toDate}</p>
               </div>
               <div>
-                <p className="prior-company-description">
-                Lorim ipsume odloar dolar et.....lorim ipsum doloar et lorim ipsum dolar et
-                </p>
+                <p className="prior-company-description">{props.workInfo.jobDescription}</p>
               </div>
-              <div>{props.displayAllJobs}</div>
+              <div>{props.displayJobs}</div>
             </div>
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>

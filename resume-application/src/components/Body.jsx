@@ -15,7 +15,7 @@ function Body() {
   //   console.log("newValue:", newValue);
   //   setDayPicker(newValue);
   // }
- 
+
   const [generalInfo, setGeneralInfo] = React.useState({
     firstName: '',
     lastName: '',
@@ -76,13 +76,42 @@ function Body() {
   }
 
   //display job deails from the allExp array
-  const displayAllJobs = allExp.map(job => {
-    return <div key="job.companyName">
+  // const displayAllJobs = allExp.map(job => {
+  //   return <div key="job.companyName">
+  //     <p>{job.title}</p>
+  //     <p>{job.companyName}</p>
+  //     <p>{job.city}</p>
+  //   </div>
+  // })
+
+  // const displayAll = allExp.map(job => {
+  //   return <div key="job.companyName">
+  //     <p>{job.title}</p>
+  //     <p>{job.companyName}</p>
+  //     <p>{job.city}</p>
+  //   </div>
+  // })
+
+  const displayAll = () => {
+    const copyState = [...allExp];
+    const all1 = copyState.reverse().map(job => {
+      return <div key="job.companyName">
       <p>{job.title}</p>
       <p>{job.companyName}</p>
       <p>{job.city}</p>
     </div>
-  })
+    })
+    return all1;
+  }
+
+  const all = displayAll();
+
+  // const aE = [...allExp];
+  // console.log(aE);
+  // const displayAllJobs = (e) => {
+  //   e.preventDefault();
+
+  // }
 
   // console.log(generalInfo)
   // console.log(workExpInfo)
@@ -106,6 +135,7 @@ function Body() {
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
           affixWorkInfo={addNewJobExp}
+          displayJobs={all}
           // dateValue={dayPicker}
           // dateValueChange={handleDayChange}
         />
@@ -118,7 +148,7 @@ function Body() {
         <ResumeDisplay 
           generalInfoData={generalInfo}
           workInfo={workExpInfo}
-          displayJobs={displayAllJobs}
+          // displayJobs={displayAllJobs}
           // click={handleChange}
         />
       </div>

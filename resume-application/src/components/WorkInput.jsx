@@ -67,6 +67,7 @@ function WorkInput(props) {
         />
         <button type="button" onClick={props.affixWorkInfo}>Test add to array</button>
         <button type="submit">Add</button>
+        <div>{props.displayJobs}</div>
         <button type="button">Delete</button>
       </form>
     </div>
