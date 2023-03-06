@@ -40,11 +40,12 @@ function Body() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('submitted')
+    console.log('submitted');
   }
 
   //stores data for each individual past work experience on input
   const [workExpInfo, setWorkExpInfo] = React.useState({
+    key: 0,
     companyName: '',
     title: '',
     city: '',
@@ -60,7 +61,7 @@ function Body() {
     setWorkExpInfo(prevValues => {
       return {
         ...prevValues, 
-        [name]: value, 
+        [name]: value,
       }
     })
   }
@@ -92,26 +93,19 @@ function Body() {
   //   </div>
   // })
 
-  const displayAll = () => {
+  const displayAllJobs = () => {
     const copyState = [...allExp];
-    const all1 = copyState.reverse().map(job => {
-      return <div key="job.companyName">
+    const all = copyState.reverse().map(job => {
+      return <div key={job.key += 1}>
       <p>{job.title}</p>
       <p>{job.companyName}</p>
       <p>{job.city}</p>
     </div>
     })
-    return all1;
+    return all;
   }
 
-  const all = displayAll();
-
-  // const aE = [...allExp];
-  // console.log(aE);
-  // const displayAllJobs = (e) => {
-  //   e.preventDefault();
-
-  // }
+  const allWorkExp = displayAllJobs();
 
   // console.log(generalInfo)
   // console.log(workExpInfo)
@@ -135,7 +129,6 @@ function Body() {
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
           affixWorkInfo={addNewJobExp}
-          displayJobs={all}
           // dateValue={dayPicker}
           // dateValueChange={handleDayChange}
         />
@@ -148,6 +141,7 @@ function Body() {
         <ResumeDisplay 
           generalInfoData={generalInfo}
           workInfo={workExpInfo}
+          displayJobs={allWorkExp}
           // displayJobs={displayAllJobs}
           // click={handleChange}
         />
