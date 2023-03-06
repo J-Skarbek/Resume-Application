@@ -6,7 +6,7 @@ function ResumeDisplay(props) {
 
   return (
     <div className="display-info flex-column">
-      <div className="resume-header bg-white/25 p-6 shadow-md text-white">
+      <div className="resume-header bg-white/25 p-6 shadow-md text-white capitalize">
         <h2 className="font-bold text-5xl mb-4">
           {props.generalInfoData.firstName} {props.generalInfoData.lastName}
         </h2>
@@ -43,7 +43,7 @@ function ResumeDisplay(props) {
           <img src={reactIcon} alt="just a placeholder for now" />
           <h3>Personal Details</h3>
           <h4>Address</h4>
-          <p>{props.generalInfoData.address}</p>
+          <p className="capitalize">{props.generalInfoData.address}</p>
           <h4>Phone Number</h4>
           <p>{props.generalInfoData.phone}</p>
           <h4>Email</h4>
