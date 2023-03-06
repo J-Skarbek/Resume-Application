@@ -65,8 +65,7 @@ function WorkInput(props) {
         onChange={props.updateInfo}
         value={props.workInfo.jobDescription}
         />
-        <button type="button" onClick={props.affixWorkInfo}>Test add to array</button>
-        <button type="submit">Add</button>
+        <button type="button" onClick={props.affixWorkInfo}>Add</button>
         <div>{props.displayJobs}</div>
         <button type="button">Delete</button>
       </form>

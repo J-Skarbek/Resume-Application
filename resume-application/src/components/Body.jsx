@@ -73,8 +73,17 @@ function Body() {
   function addNewJobExp(e) {
     e.preventDefault();
     updateAllExp(prevExp => [...prevExp, workExpInfo]);
+    setWorkExpInfo(prevVals => ({
+      ...prevVals,
+      companyName: '',
+      title: '',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    })
     // console.log(allExp);
-  }
+  )}
 
   //display job deails from the allExp array
   // const displayAllJobs = allExp.map(job => {
