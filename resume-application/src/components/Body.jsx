@@ -109,6 +109,9 @@ function Body() {
       <p>{job.title}</p>
       <p>{job.companyName}</p>
       <p>{job.city}</p>
+      <p>{job.fromDate}</p>
+      <p>{job.toDate}</p>
+      <p>{job.jobDescription}</p>
     </div>
     })
     return all;
@@ -146,7 +149,7 @@ function Body() {
           onChange={handleDayChange}
         /> */}
       </div>
-      <div className="right-side">
+      <div className="right-side w-[60%]">
         <ResumeDisplay 
           generalInfoData={generalInfo}
           workInfo={workExpInfo}

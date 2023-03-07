@@ -32,7 +32,7 @@ function ResumeDisplay(props) {
                 <p className="prior-company-toDate">{props.workInfo.toDate}</p>
               </div>
               <div>
-                <p className="prior-company-description">{props.workInfo.jobDescription}</p>
+                <p className="prior-company-description pr-12 break-normal">{props.workInfo.jobDescription}</p>
               </div>
               <div>{props.displayJobs}</div>
             </div>
