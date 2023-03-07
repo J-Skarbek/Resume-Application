@@ -13,7 +13,7 @@ function ResumeDisplay(props) {
         <p className="font-normal text-3xl">{props.generalInfoData.title}</p>
       </div>
       <div className="resume-body flex bg-white/25 p-6 text-white">
-        <div className="resume-detailed-text flex-column px-8 text-xl">
+        <div className="resume-detailed-text flex-column px-8 text-xl w-[75%]">
           <h3>About</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
@@ -28,11 +28,12 @@ function ResumeDisplay(props) {
                 </div>
               </div>
               <div className="flex">
-                <p className="prior-company-fromDate">{props.workInfo.fromDate}</p>
-                <p className="prior-company-toDate">{props.workInfo.toDate}</p>
+                {props.workInfo.fromDate && <p className="prior-company-dates">
+                  {props.workInfo.fromDate} - {props.workInfo.toDate}
+                </p>}
               </div>
               <div>
-                <p className="prior-company-description pr-12 break-normal">{props.workInfo.jobDescription}</p>
+                <p className="prior-company-description pr-12 break-words">{props.workInfo.jobDescription}</p>
               </div>
               <div>{props.displayJobs}</div>
             </div>

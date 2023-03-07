@@ -105,13 +105,22 @@ function Body() {
   const displayAllJobs = () => {
     const copyState = [...allExp];
     const all = copyState.reverse().map(job => {
-      return <div key={job.key += 1}>
-      <p>{job.title}</p>
-      <p>{job.companyName}</p>
-      <p>{job.city}</p>
-      <p>{job.fromDate}</p>
-      <p>{job.toDate}</p>
-      <p>{job.jobDescription}</p>
+      return <div key={job.key += 1} className="flex-column">
+        <div className="flex justify-between">
+          <div className="text-details flex-column justify-start font-semibold">
+            <p>{job.title}</p>
+            <p>{job.companyName}</p>
+          </div>
+          <div>
+            <p>{job.city}</p>
+          </div>
+        </div>
+        <div className="flex">
+        <p className="prior-company-dates">{job.fromDate} - {job.toDate}</p>
+        </div>
+        <div>
+          <p className="prior-company-description pr-12 break-all">{job.jobDescription}</p>
+        </div>
     </div>
     })
     return all;
