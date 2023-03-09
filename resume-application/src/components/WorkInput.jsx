@@ -69,6 +69,7 @@ function WorkInput(props) {
         <div>{props.displayJobs}</div>
         <button type="button">Delete</button>
       </form>
+      <div>{props.newField}</div>
     </div>
   )
 }
