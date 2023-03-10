@@ -73,42 +73,27 @@ function Body() {
   function addNewJobExp(e) {
     e.preventDefault();
     updateAllExp(prevExp => [...prevExp, workExpInfo]);
-    // setWorkExpInfo(prevVals => ({
-    //   ...prevVals,
-    //   companyName: '',
-    //   title: '',
-    //   city: '',
-    //   fromDate: '',
-    //   toDate: '',
-    //   jobDescription: '',
-    // })
-    // // console.log(allExp);
-  // )
+    setWorkExpInfo(prevVals => ({
+      ...prevVals,
+      companyName: '',
+      title: '',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    })
+
+  )
+  console.log(allExp);
 }
-
-  //display job deails from the allExp array
-  // const displayAllJobs = allExp.map(job => {
-  //   return <div key="job.companyName">
-  //     <p>{job.title}</p>
-  //     <p>{job.companyName}</p>
-  //     <p>{job.city}</p>
-  //   </div>
-  // })
-
-  // const displayAll = allExp.map(job => {
-  //   return <div key="job.companyName">
-  //     <p>{job.title}</p>
-  //     <p>{job.companyName}</p>
-  //     <p>{job.city}</p>
-  //   </div>
-  // })
 
   const addNewInputs = () => {
     const copyState = [...allExp];
     const allInputs = copyState.reverse().map(inputFields => {
       return <div key={inputFields.key += 1}>
         <WorkInput 
-          workInfo={workExpInfo}
+          // workInfo={workExpInfo}
+          workInfo={inputFields}
           updateInfo={updateWorkInfo}
           affixWorkInfo={addNewJobExp}
         />
@@ -147,7 +132,7 @@ function Body() {
 
   // console.log(generalInfo)
   // console.log(workExpInfo)
-  // console.log(allExp)
+  console.log(allExp)
 
   return (
     <div className="body flex justify-evenly my-8 ">
