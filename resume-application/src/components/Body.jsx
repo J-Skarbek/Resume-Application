@@ -2,6 +2,7 @@ import React from 'react';
 // import Datepicker from "react-tailwindcss-datepicker";
 import GeneralInfo from './GeneralInfo';
 import WorkInput from './WorkInput';
+import PastWorkInputs from './pastWorkInputs';
 import ResumeDisplay from './ResumeDisplay';
 
 function Body() {
@@ -67,12 +68,12 @@ function Body() {
   }
 
   //Array to hold all the different job exp items in
-  const [allExp, updateAllExp] = React.useState([])
+  const [allExp, setAllExp] = React.useState([]);
 
   //adds new prior-job experience to the array of allExp
   function addNewJobExp(e) {
     e.preventDefault();
-    updateAllExp(prevExp => [...prevExp, workExpInfo]);
+    // setAllExp(prevExp => [...prevExp, workExpInfo]);
     setWorkExpInfo(prevVals => ({
       ...prevVals,
       companyName: '',
@@ -82,19 +83,36 @@ function Body() {
       toDate: '',
       jobDescription: '',
     })
-
   )
-  console.log(allExp);
+  setAllExp(prevExp => [...prevExp, workExpInfo]);
 }
+
+  //updates the existing array on edit in the forms
+  const updateOldJobs = e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    const newArray = allExp.map((item, i) => {
+      return {
+        ...item,
+        [name]: value
+      }
+    })
+    function updateArr() { 
+      setAllExp(newArray)
+    }
+    updateArr();
+    console.log(allExp)
+  }
 
   const addNewInputs = () => {
     const copyState = [...allExp];
-    const allInputs = copyState.reverse().map(inputFields => {
-      return <div key={inputFields.key += 1}>
-        <WorkInput 
+    const allInputs = copyState.reverse().map((inputFields, i) => {
+      return <div className={`past-work-${i}`} key={i}>
+        <PastWorkInputs
           // workInfo={workExpInfo}
           workInfo={inputFields}
-          updateInfo={updateWorkInfo}
+          updateInfo={updateOldJobs}
+          // updateInfo={updatePastValues}
           affixWorkInfo={addNewJobExp}
         />
       </div>
@@ -106,8 +124,10 @@ function Body() {
 
   const displayAllJobs = () => {
     const copyState = [...allExp];
+    let count = 0;
     const all = copyState.reverse().map(job => {
-      return <div key={job.key += 1} className="flex-column">
+      count += 1;
+      return <div key={count} className="flex-column">
         <div className="flex justify-between">
           <div className="text-details flex-column justify-start font-semibold">
             <p>{job.title}</p>
@@ -132,7 +152,7 @@ function Body() {
 
   // console.log(generalInfo)
   // console.log(workExpInfo)
-  console.log(allExp)
+  // console.log(allExp)
 
   return (
     <div className="body flex justify-evenly my-8 ">
@@ -173,5 +193,7 @@ function Body() {
     </div>
   )
 }
+
+
 
 export default Body

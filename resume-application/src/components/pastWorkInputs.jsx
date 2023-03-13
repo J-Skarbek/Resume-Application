@@ -1,9 +1,10 @@
 import React from 'react';
 
-function WorkInput(props) {
+function PastWorkInputs(props) {
+
+  // const [index, setIndex] = React.useState(0); //Setting up the index/key here??
 
   return (
-    <div className="work-exp">
       <form className="general-info">
       {/* <form className="general-info" onSubmit={props.submit}> */}
       {/*seem to be getting error about uncontrolled to controlled comps on the title input*/}
@@ -69,9 +70,9 @@ function WorkInput(props) {
         <div>{props.displayJobs}</div>
         <button type="button">Test/Delete</button>
       </form>
-      <div>{props.newField}</div>
-    </div>
+
+
   )
 }
 
-export default WorkInput;
+export default PastWorkInputs;
