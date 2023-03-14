@@ -5,7 +5,7 @@ import WorkInput from './WorkInput';
 import PastWorkInputs from './pastWorkInputs';
 import ResumeDisplay from './ResumeDisplay';
 
-function Body() {
+function NewBody() {
 
   // const [dayPicker, setDayPicker] = React.useState({
   //   startDate: new Date(),
@@ -206,4 +206,4 @@ function Body() {
   )
 }
 
-export default Body
+export default NewBody

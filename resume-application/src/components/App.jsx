@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/App.css';
 import Header from './Header';
 import Body from './Body';
+import NewBody from './NewBody';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <div className="app-bg">
       <Header />
       <Body />
-
+      
     </div>
   )
 }
