@@ -20,8 +20,8 @@ function ResumeDisplay(props) {
             <div className="prior-job-details">
               <div className="flex justify-between">
                 <div className="text-details flex-column justify-start font-semibold">
-                  <p className="prior-company-name">{props.workInfo.companyName}</p>
                   <p className="prior-comapny-title">{props.workInfo.title}</p>
+                  <p className="prior-company-name">{props.workInfo.companyName}</p>
                 </div>
                 <div>
                   <p className="prior-company-city">{props.workInfo.city}</p>

@@ -45,7 +45,7 @@ function WorkInput(props) {
         value={props.workInfo.fromDate}
         // value={props.dateValue}
         />
-         <label htmlFor="toDate">From:</label>
+         <label htmlFor="toDate">To:</label>
         <input 
         type="text"
         name="toDate"
