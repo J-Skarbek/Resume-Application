@@ -90,25 +90,7 @@ function NewBody() {
     },
   ])
 
-  const updateWorkExp = e => {
-    e.preventDefault();
-    // const { name, value } = e.target;
-    setWorkExp(workExp.map((job, i) => {
-      const { name, value } = e.target;
-      if (job.key === i) {
-        console.log(job.key)
-        return {
-          ...job,
-          [name] : value,
-        }
-      } else {
-        return {...job};
-      }
-    }))
-    // console.log(workExp)
-  }
-
-  const update = index => e => {
+  const updateWorkExp = index => e => {
     const newArray = workExp.map((item, i) => {
       if (index === i) {
         return { ...item, [e.target.name] : e.target.value };
@@ -120,7 +102,6 @@ function NewBody() {
     console.log(workExp)
   }
 
-
   const addNew = e => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -131,84 +112,6 @@ function NewBody() {
       }
     }))
     // console.log(workExp)
-  }
-
-  const addNewTwo = e => {
-    const { name, value } = e.target;
-    let nextId = 0;
-    const insertAt = 0;
-    const nextJob = [
-      ...workExp.slice(0, insertAt),
-      { 
-        key: nextId += 1, 
-        [name] : value
-      },
-      ...workExp.slice(insertAt)
-    ];
-    setWorkExp(nextJob);
-    console.log(workExp)
-  }
-
-
-  //handles updating an individual job experience details
-  const updateWorkInfo = e => {
-    const { name, value } = e.target;
-    // console.log(name, value);
-    setWorkExpInfo(prevValues => {
-      return {
-        ...prevValues, 
-        [name]: value,
-      }
-    })
-  }
-
-  //Array to hold all the different job exp items in
-  const [allExp, setAllExp] = React.useState([]);
-
-  //adds new prior-job experience to the array of allExp
-  function addNewJobExp(e) {
-    e.preventDefault();
-    // setAllExp(prevValues => {
-    //   return [
-    //     ...prevValues,
-    //     {
-          
-    //     }
-    //   ]
-    // })
-    // setAllExp(prevExp => [...prevExp, workExpInfo]);
-    setWorkExpInfo(prevVals => ({
-      ...prevVals,
-      // companyName: '',
-      // title: '',
-      // city: '',
-      // fromDate: '',
-      // toDate: '',
-      // jobDescription: '',
-    })
-  )
-  setAllExp(prevExp => [...prevExp, workExpInfo]);
-}
-
-  //updates the existing array on edit in the forms
-  const updateOldJobs = e => {
-    e.preventDefault();
-    console.log(e);
-    const { name, value } = e.target;
-    const newArray = workExp.map((item, i) => {
-      console.log(item)
-      console.log(i)
-      return {
-        ...item,
-        [name]: value,
-        key: i,
-      }
-    })
-    function updateArr() { 
-      setAllExp(newArray)
-    }
-    updateArr();
-    console.log(allExp)
   }
 
   const addNewInputs = () => {
@@ -229,9 +132,7 @@ function NewBody() {
 
   const workInputFields = addNewInputs();
 
-  // console.log(generalInfo)
-  // console.log(workExpInfo)
-  // console.log(allExp)
+  // console.log(workExp)
 
   return (
     <div className="body flex justify-evenly my-8 ">
@@ -250,9 +151,7 @@ function NewBody() {
         <NewWorkInput
           // workInfo={workExpInfo}
           workInfo={workExp}
-          // updateInfo={updateWorkInfo}
-          updateInfo={update}
-          // updateInfo={updateWorkExp}
+          updateInfo={updateWorkExp}
           affixWorkInfo={addNew}
           // affixWorkInfo={addNewJobExp}
           newField={workInputFields}

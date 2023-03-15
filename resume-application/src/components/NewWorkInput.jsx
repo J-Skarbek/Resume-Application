@@ -5,6 +5,7 @@ function NewWorkInput(props) {
 
   const displayForms = () => {
     const newArr = [...props.workInfo];
+    // const formFields = newArr.reverse().map((pastJob, i) => {
     const formFields = newArr.map((pastJob, i) => {
       // console.table(newArr)
       return <div className={`index-${i}`} key={i}>
