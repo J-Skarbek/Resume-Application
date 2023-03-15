@@ -5,25 +5,18 @@ import '../styles/ResumeDisplay.css';
 
 function NewResumeDisplay(props) {
 
-// console.log(props.workExp)
-
-const displayJobs = () => {
-  const newArr = [...props.workExp];
-  // function reverseAll() { 
-  const test = newArr.reverse().map((pastJob, i) => {
-      // console.log(pastJob, pastJob.companyName)
+  const displayJobs = () => {
+    const newArr = [...props.workExp];
+    const components = newArr.reverse().map((pastJob, i) => {
       // console.table(newArr)
       return <WorkExp 
         details={pastJob}
         key={i}
         />
-    })
-  // }
-  console.table(newArr)
-  console.log(test)
-  return test;
-  // return reverseAll();
-}
+      })
+    // console.table(newArr)
+    return components;
+  }
 
   return (
     <div className="display-info flex-column">
@@ -39,29 +32,6 @@ const displayJobs = () => {
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
           { displayJobs() }
-          {/* <WorkExp 
-            details={props.workExp}
-          /> */}
-            {/* <div className="prior-job-details">
-              <div className="flex justify-between">
-                <div className="text-details flex-column justify-start font-semibold">
-                  <p className="prior-comapny-title">{props.workInfo[0].title}</p>
-                  <p className="prior-company-name">{props.workInfo[0].companyName}</p>
-                </div>
-                <div>
-                  <p className="prior-company-city">{props.workInfo.city}</p>
-                </div>
-              </div>
-              <div className="flex">
-                {props.workInfo.fromDate && <p className="prior-company-dates">
-                  {props.workInfo.fromDate} - {props.workInfo.toDate}
-                </p>}
-              </div>
-              <div>
-                <p className="prior-company-description pr-12 break-words">{props.workInfo.jobDescription}</p>
-              </div>
-              <div>{props.displayJobs}</div>
-            </div> */}
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>
         </div>

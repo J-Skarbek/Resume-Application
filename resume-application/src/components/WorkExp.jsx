@@ -1,7 +1,7 @@
 import React from 'react';
 
 function WorkExp(props) {
-  console.log(props.details)
+  // console.log(props.details)
 
   return (
     <div key={props.key} className="flex-column">
