@@ -117,6 +117,7 @@ function NewBody() {
       }
     });
     setWorkExp(newArray);
+    console.log(workExp)
   }
 
 
