@@ -5,6 +5,7 @@ import WorkInput from './WorkInput';
 import PastWorkInputs from './pastWorkInputs';
 import ResumeDisplay from './ResumeDisplay';
 import NewResumeDisplay from './NewResumeDisplay';
+import NewWorkInput from './NewWorkInput';
 
 function NewBody() {
 
@@ -228,7 +229,7 @@ function NewBody() {
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience
         </h2>
-        <WorkInput
+        <NewWorkInput
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
           affixWorkInfo={addNew}
