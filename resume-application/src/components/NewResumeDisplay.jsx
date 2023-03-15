@@ -9,19 +9,21 @@ function NewResumeDisplay(props) {
 
 const displayJobs = () => {
   const newArr = [...props.workExp];
-  function reverseAll() { 
-    newArr.reverse().map((pastJob, i) => {
-      console.log(pastJob, pastJob.companyName)
-      console.table(newArr)
+  // function reverseAll() { 
+  const test = newArr.reverse().map((pastJob, i) => {
+      // console.log(pastJob, pastJob.companyName)
+      // console.table(newArr)
       return <WorkExp 
         details={pastJob}
         key={i}
-      />
+        />
     })
-  } 
-  return reverseAll();
+  // }
+  console.table(newArr)
+  console.log(test)
+  return test;
+  // return reverseAll();
 }
-
 
   return (
     <div className="display-info flex-column">

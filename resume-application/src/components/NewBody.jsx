@@ -59,15 +59,35 @@ function NewBody() {
   })
 
   //newest test
-  const [workExp, setWorkExp] = React.useState([{
-    key: 0,
-    companyName: 'State Farm',
-    title: 'Sales Salve',
-    city: '',
-    fromDate: '',
-    toDate: '',
-    jobDescription: '',
-  }])
+  const [workExp, setWorkExp] = React.useState([
+    {
+      key: 0,
+      companyName: 'State Farm',
+      title: 'Sales Salve',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    },
+    {
+      key: 1,
+      companyName: 'Verizon',
+      title: 'Sales Slave',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    },
+    {
+      key: 2,
+      companyName: 'Progressive',
+      title: 'Claims Slave',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    },
+  ])
 
   const addNew = e => {
     e.preventDefault();
