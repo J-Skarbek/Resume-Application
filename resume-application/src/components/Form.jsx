@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form() {
+function Form(props) {
 
   return (
     <div className="work-exp">
@@ -14,7 +14,7 @@ function Form() {
         id="position"
         placeholder="position"
         onChange={props.updateInfo}
-        value={props.workInfo.title}
+        value={props.details.title}
         />
         <label htmlFor="company">Company</label>
         <input 
@@ -23,7 +23,7 @@ function Form() {
         id="company"
         placeholder="company"
         onChange={props.updateInfo}
-        value={props.workInfo.companyName}
+        value={props.details.companyName}
         />
         <label htmlFor="city">City</label>
         <input 
@@ -32,7 +32,7 @@ function Form() {
         id="city"
         placeholder="City"
         onChange={props.updateInfo}
-        value={props.workInfo.city}
+        value={props.details.city}
         />
         <label htmlFor="fromDate">From:</label>
         <input 
@@ -42,7 +42,7 @@ function Form() {
         placeholder="Ex. 01/22/2016"
         onChange={props.updateInfo}
         // onChange={props.Change}
-        value={props.workInfo.fromDate}
+        value={props.details.fromDate}
         // value={props.dateValue}
         />
         <label htmlFor="toDate">To:</label>
@@ -53,7 +53,7 @@ function Form() {
         placeholder="Ex. 07/31/2022"
         onChange={props.updateInfo}
         // onChange={props.Change}
-        value={props.workInfo.toDate}
+        value={props.details.toDate}
         // value={props.dateValue}
         />        
         <label htmlFor="jobDescription">Job Details</label>
@@ -63,9 +63,9 @@ function Form() {
         id="jobDescription"
         placeholder="Enter details about the position here..."
         onChange={props.updateInfo}
-        value={props.workInfo.jobDescription}
+        value={props.details.jobDescription}
         />
-        <button type="button" onClick={props.affixWorkInfo}>Add</button>
+        <button type="button" onClick={props.affixdetails}>Add</button>
         <div>{props.displayJobs}</div>
         <button type="button">Test/Delete</button>
       </form>
