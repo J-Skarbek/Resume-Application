@@ -5,6 +5,24 @@ import '../styles/ResumeDisplay.css';
 
 function NewResumeDisplay(props) {
 
+// console.log(props.workExp)
+
+const displayJobs = () => {
+  const newArr = [...props.workExp];
+  function reverseAll() { 
+    newArr.reverse().map((pastJob, i) => {
+      console.log(pastJob, pastJob.companyName)
+      console.table(newArr)
+      return <WorkExp 
+        details={pastJob}
+        key={i}
+      />
+    })
+  } 
+  return reverseAll();
+}
+
+
   return (
     <div className="display-info flex-column">
       <div className="resume-header bg-white/25 p-6 shadow-md text-white capitalize">
@@ -18,7 +36,10 @@ function NewResumeDisplay(props) {
           <h3>About</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
-          <WorkExp />
+          { displayJobs() }
+          {/* <WorkExp 
+            details={props.workExp}
+          /> */}
             {/* <div className="prior-job-details">
               <div className="flex justify-between">
                 <div className="text-details flex-column justify-start font-semibold">

@@ -1,23 +1,24 @@
 import React from 'react';
 
 function WorkExp(props) {
+  console.log(props.details)
 
   return (
-    <div key={count} className="flex-column">
+    <div key={props.key} className="flex-column">
         <div className="flex justify-between">
           <div className="text-details flex-column justify-start font-semibold">
-            <p>{job.title}</p>
-            <p>{job.companyName}</p>
+            <p>{props.details.title}</p>
+            <p>{props.details.companyName}</p>
           </div>
           <div>
-            <p>{job.city}</p>
+            <p>{props.details.city}</p>
           </div>
         </div>
         <div className="flex">
-        <p className="prior-company-dates">{job.fromDate} - {job.toDate}</p>
+        <p className="prior-company-dates">{props.details[0].fromDate} - {props.details[0].toDate}</p>
         </div>
         <div>
-          <p className="prior-company-description pr-12 break-all">{job.jobDescription}</p>
+          <p className="prior-company-description pr-12 break-all">{props.details[0].jobDescription}</p>
         </div>
     </div>
   )

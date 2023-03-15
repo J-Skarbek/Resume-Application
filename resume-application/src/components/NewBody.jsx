@@ -223,13 +223,18 @@ function NewBody() {
         /> */}
       </div>
       <div className="right-side w-[60%]">
-        <ResumeDisplay 
+        {/* <ResumeDisplay 
           generalInfoData={generalInfo}
           workInfo={workExp}
           // workInfo={workExpInfo}
           // displayJobs={allWorkExp}
           // displayJobs={displayAllJobs}
           // click={handleChange}
+        /> */}
+        <NewResumeDisplay
+          generalInfoData={generalInfo}
+          workExp={workExp} 
+        
         />
       </div>
     </div>
