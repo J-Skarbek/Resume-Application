@@ -1,5 +1,6 @@
 import React from 'react';
 import reactIcon from '../assets/react.svg';
+import WorkExp from './WorkExp';
 import '../styles/ResumeDisplay.css';
 
 function NewResumeDisplay(props) {
@@ -17,7 +18,8 @@ function NewResumeDisplay(props) {
           <h3>About</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
-            <div className="prior-job-details">
+          <WorkExp />
+            {/* <div className="prior-job-details">
               <div className="flex justify-between">
                 <div className="text-details flex-column justify-start font-semibold">
                   <p className="prior-comapny-title">{props.workInfo[0].title}</p>
@@ -36,7 +38,7 @@ function NewResumeDisplay(props) {
                 <p className="prior-company-description pr-12 break-words">{props.workInfo.jobDescription}</p>
               </div>
               <div>{props.displayJobs}</div>
-            </div>
+            </div> */}
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>
         </div>
