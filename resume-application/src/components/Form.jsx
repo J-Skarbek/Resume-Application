@@ -1,7 +1,6 @@
-import React from 'react';
-import Form from './Form';
+import React from "react";
 
-function NewWorkInput(props) {
+function Form() {
 
   return (
     <div className="work-exp">
@@ -46,7 +45,7 @@ function NewWorkInput(props) {
         value={props.workInfo.fromDate}
         // value={props.dateValue}
         />
-         <label htmlFor="toDate">To:</label>
+        <label htmlFor="toDate">To:</label>
         <input 
         type="text"
         name="toDate"
@@ -70,9 +69,9 @@ function NewWorkInput(props) {
         <div>{props.displayJobs}</div>
         <button type="button">Test/Delete</button>
       </form>
-      {/* <div>{props.newField}</div> */}
+    {/* <div>{props.newField}</div> */}
     </div>
   )
 }
 
-export default NewWorkInput;
+export default Form;

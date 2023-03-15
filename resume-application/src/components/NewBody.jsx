@@ -65,44 +65,75 @@ function NewBody() {
       key: 0,
       companyName: 'State Farm',
       title: 'Sales Salve',
-      city: '',
-      fromDate: '',
-      toDate: '',
-      jobDescription: '',
+      city: 'Nashville',
+      fromDate: '5/18/18',
+      toDate: '6/30/22',
+      jobDescription: 'Testing',
     },
     {
       key: 1,
       companyName: 'Verizon',
       title: 'Sales Slave',
-      city: '',
-      fromDate: '',
-      toDate: '',
-      jobDescription: '',
+      city: 'Nashville',
+      fromDate: '9/15/17',
+      toDate: '2/22/18',
+      jobDescription: 'More Testing',
     },
     {
       key: 2,
       companyName: 'Progressive',
       title: 'Claims Slave',
-      city: '',
-      fromDate: '',
-      toDate: '',
-      jobDescription: '',
+      city: 'Nashville',
+      fromDate: '05/16/16',
+      toDate: '07/31/17',
+      jobDescription: 'Lorim Ipsum',
     },
   ])
+
+  const updateWorkExp = e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setWorkExp(workExp.map((job, i) => {
+      if (job.key === i) {
+        return {
+          ...job,
+          [name] : value,
+        }
+      } else {
+        return {...job};
+      }
+    }))
+    // console.log(workExp)
+  }
 
   const addNew = e => {
     e.preventDefault();
     const { name, value } = e.target;
-    setWorkExp(prev => {
-      return [...prev,
-        {
-          ...workExp,
-          [name]: value,
-        }
-      ];
-    })
+    setWorkExp(workExp.map(job => {
+      return {
+        ...job,
+        [name] : value,
+      }
+    }))
+    // console.log(workExp)
+  }
+
+  const addNewTwo = e => {
+    const { name, value } = e.target;
+    let nextId = 0;
+    const insertAt = 0;
+    const nextJob = [
+      ...workExp.slice(0, insertAt),
+      { 
+        key: nextId += 1, 
+        [name] : value
+      },
+      ...workExp.slice(insertAt)
+    ];
+    setWorkExp(nextJob);
     console.log(workExp)
   }
+
 
   //handles updating an individual job experience details
   const updateWorkInfo = e => {
@@ -172,8 +203,8 @@ function NewBody() {
         <PastWorkInputs
           // workInfo={workExpInfo}
           workInfo={inputFields}
-          updateInfo={updateOldJobs}
-          // updateInfo={updatePastValues}
+          // updateInfo={updateOldJobs}
+          updateInfo={updateWorkExp}
           affixWorkInfo={addNew}
         />
       </div>
@@ -230,8 +261,10 @@ function NewBody() {
           Work Experience
         </h2>
         <NewWorkInput
-          workInfo={workExpInfo}
-          updateInfo={updateWorkInfo}
+          // workInfo={workExpInfo}
+          workInfo={workExp}
+          // updateInfo={updateWorkInfo}
+          updateInfo={updateWorkExp}
           affixWorkInfo={addNew}
           // affixWorkInfo={addNewJobExp}
           newField={workInputFields}
