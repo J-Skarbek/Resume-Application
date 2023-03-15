@@ -4,6 +4,7 @@ import GeneralInfo from './GeneralInfo';
 import WorkInput from './WorkInput';
 import PastWorkInputs from './pastWorkInputs';
 import ResumeDisplay from './ResumeDisplay';
+import NewResumeDisplay from './NewResumeDisplay';
 
 function NewBody() {
 

@@ -2,7 +2,7 @@ import React from 'react';
 import reactIcon from '../assets/react.svg';
 import '../styles/ResumeDisplay.css';
 
-function ResumeDisplay(props) {
+function NewResumeDisplay(props) {
 
   return (
     <div className="display-info flex-column">
@@ -55,4 +55,4 @@ function ResumeDisplay(props) {
   )
 }
 
-export default ResumeDisplay;
+export default NewResumeDisplay;
