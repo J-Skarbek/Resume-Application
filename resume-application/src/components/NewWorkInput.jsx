@@ -11,6 +11,7 @@ function NewWorkInput(props) {
           <Form 
           details={pastJob}
           index={i}
+          updateInfo={props.updateInfo(i)}
           />
       </div>
       })

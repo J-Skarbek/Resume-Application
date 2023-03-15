@@ -92,9 +92,11 @@ function NewBody() {
 
   const updateWorkExp = e => {
     e.preventDefault();
-    const { name, value } = e.target;
+    // const { name, value } = e.target;
     setWorkExp(workExp.map((job, i) => {
+      const { name, value } = e.target;
       if (job.key === i) {
+        console.log(job.key)
         return {
           ...job,
           [name] : value,
@@ -105,6 +107,18 @@ function NewBody() {
     }))
     // console.log(workExp)
   }
+
+  const update = index => e => {
+    const newArray = workExp.map((item, i) => {
+      if (index === i) {
+        return { ...item, [e.target.name] : e.target.value };
+      } else {
+        return item;
+      }
+    });
+    setWorkExp(newArray);
+  }
+
 
   const addNew = e => {
     e.preventDefault();
@@ -214,34 +228,6 @@ function NewBody() {
 
   const workInputFields = addNewInputs();
 
-  // const displayAllJobs = () => {
-  //   const copyState = [...allExp];
-  //   let count = 0;
-  //   const all = copyState.reverse().map(job => {
-  //     count += 1;
-  //     return <div key={count} className="flex-column">
-  //       <div className="flex justify-between">
-  //         <div className="text-details flex-column justify-start font-semibold">
-  //           <p>{job.title}</p>
-  //           <p>{job.companyName}</p>
-  //         </div>
-  //         <div>
-  //           <p>{job.city}</p>
-  //         </div>
-  //       </div>
-  //       <div className="flex">
-  //       <p className="prior-company-dates">{job.fromDate} - {job.toDate}</p>
-  //       </div>
-  //       <div>
-  //         <p className="prior-company-description pr-12 break-all">{job.jobDescription}</p>
-  //       </div>
-  //   </div>
-  //   })
-  //   return all;
-  // }
-
-  // const allWorkExp = displayAllJobs();
-
   // console.log(generalInfo)
   // console.log(workExpInfo)
   // console.log(allExp)
@@ -264,7 +250,8 @@ function NewBody() {
           // workInfo={workExpInfo}
           workInfo={workExp}
           // updateInfo={updateWorkInfo}
-          updateInfo={updateWorkExp}
+          updateInfo={update}
+          // updateInfo={updateWorkExp}
           affixWorkInfo={addNew}
           // affixWorkInfo={addNewJobExp}
           newField={workInputFields}
