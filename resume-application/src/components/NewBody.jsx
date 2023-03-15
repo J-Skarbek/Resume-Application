@@ -44,6 +44,8 @@ function NewBody() {
     console.log('submitted');
   }
 
+  //Everything above this line is gucci
+
   //stores data for each individual past work experience on input
   const [workExpInfo, setWorkExpInfo] = React.useState({
     key: 0,
@@ -54,6 +56,31 @@ function NewBody() {
     toDate: '',
     jobDescription: '',
   })
+
+  //newest test
+  const [workExp, setWorkExp] = React.useState([{
+    key: 0,
+    companyName: 'State Farm',
+    title: 'Sales Salve',
+    city: '',
+    fromDate: '',
+    toDate: '',
+    jobDescription: '',
+  }])
+
+  const addNew = e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setWorkExp(prev => {
+      return [...prev,
+        {
+          ...workExp,
+          [name]: value,
+        }
+      ];
+    })
+    console.log(workExp)
+  }
 
   //handles updating an individual job experience details
   const updateWorkInfo = e => {
@@ -100,7 +127,7 @@ function NewBody() {
     e.preventDefault();
     console.log(e);
     const { name, value } = e.target;
-    const newArray = allExp.map((item, i) => {
+    const newArray = workExp.map((item, i) => {
       console.log(item)
       console.log(i)
       return {
@@ -117,7 +144,7 @@ function NewBody() {
   }
 
   const addNewInputs = () => {
-    const copyState = [...allExp];
+    const copyState = [...workExp];
     const allInputs = copyState.reverse().map((inputFields, i) => {
       return <div className={`past-work-${i}`} key={i}>
         <PastWorkInputs
@@ -125,7 +152,7 @@ function NewBody() {
           workInfo={inputFields}
           updateInfo={updateOldJobs}
           // updateInfo={updatePastValues}
-          affixWorkInfo={addNewJobExp}
+          affixWorkInfo={addNew}
         />
       </div>
     })
@@ -183,7 +210,8 @@ function NewBody() {
         <WorkInput
           workInfo={workExpInfo}
           updateInfo={updateWorkInfo}
-          affixWorkInfo={addNewJobExp}
+          affixWorkInfo={addNew}
+          // affixWorkInfo={addNewJobExp}
           newField={workInputFields}
           // dateValue={dayPicker}
           // dateValueChange={handleDayChange}
@@ -196,7 +224,8 @@ function NewBody() {
       <div className="right-side w-[60%]">
         <ResumeDisplay 
           generalInfoData={generalInfo}
-          workInfo={workExpInfo}
+          workInfo={workExp}
+          // workInfo={workExpInfo}
           displayJobs={allWorkExp}
           // displayJobs={displayAllJobs}
           // click={handleChange}

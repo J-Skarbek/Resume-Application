@@ -9,8 +9,9 @@ function App() {
   return (
     <div className="app-bg">
       <Header />
-      <Body />
-      
+
+      <NewBody />
+
     </div>
   )
 }
