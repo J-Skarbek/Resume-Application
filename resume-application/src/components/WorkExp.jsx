@@ -4,7 +4,7 @@ function WorkExp(props) {
   // console.log(props.details)
 
   return (
-    <div key={props.key} className="flex-column">
+    <div className="flex-column">
         <div className="flex justify-between">
           <div className="text-details flex-column justify-start font-semibold">
             <p>{props.details.title}</p>
