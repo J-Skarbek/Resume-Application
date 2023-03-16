@@ -20,8 +20,15 @@ function NewWorkInput(props) {
     return formFields;
   }
 
+  const addNewTest = e => {
+    e.preventDefault();
+    console.log('test')
+  }
+
+
   return (
     <div>
+      <button type="button" className="bg-white" onClick={addNewTest}>Testing Add new work exp</button>
       { displayForms() }
     </div>
   )

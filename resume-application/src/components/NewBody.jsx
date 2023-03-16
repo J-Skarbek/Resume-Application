@@ -48,21 +48,18 @@ function NewBody() {
 
   //Everything above this line is gucci
 
-  //stores data for each individual past work experience on input
-  const [workExpInfo, setWorkExpInfo] = React.useState({
-    key: 0,
-    companyName: '',
-    title: '',
-    city: '',
-    fromDate: '',
-    toDate: '',
-    jobDescription: '',
-  })
-
-  //newest test
   const [workExp, setWorkExp] = React.useState([
     {
       key: 0,
+      companyName: '',
+      title: '',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    },
+    {
+      key: 1,
       companyName: 'State Farm',
       title: 'Sales Salve',
       city: 'Nashville',
@@ -71,7 +68,7 @@ function NewBody() {
       jobDescription: 'Testing',
     },
     {
-      key: 1,
+      key: 2,
       companyName: 'Verizon',
       title: 'Sales Slave',
       city: 'Nashville',
@@ -80,13 +77,22 @@ function NewBody() {
       jobDescription: 'More Testing',
     },
     {
-      key: 2,
+      key: 3,
       companyName: 'Progressive',
       title: 'Claims Slave',
       city: 'Nashville',
       fromDate: '05/16/16',
       toDate: '07/31/17',
       jobDescription: 'Lorim Ipsum',
+    },
+    {
+      key: 4,
+      companyName: 'Chappys on Church',
+      title: 'Server',
+      city: 'Nashville',
+      fromDate: '5/18/18',
+      toDate: '6/30/22',
+      jobDescription: 'Testing',
     },
   ])
 
@@ -113,6 +119,11 @@ function NewBody() {
     }))
     // console.log(workExp)
   }
+
+  // const addNewTest = e => {
+  //   e.preventDefault();
+
+  // }
 
   const addNewInputs = () => {
     const copyState = [...workExp];
@@ -152,6 +163,7 @@ function NewBody() {
           // workInfo={workExpInfo}
           workInfo={workExp}
           updateInfo={updateWorkExp}
+          // addNewWorkExp={addNewTest}
           affixWorkInfo={addNew}
           // affixWorkInfo={addNewJobExp}
           newField={workInputFields}
