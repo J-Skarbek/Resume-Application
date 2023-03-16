@@ -16,15 +16,32 @@ function NewWorkInput(props) {
           />
       </div>
       })
-    // console.table(newArr)
+    // console.table(newArr) props.setNewExp
     return formFields;
   }
 
   const addNewTest = e => {
     e.preventDefault();
-    console.log('test')
+    console.log('test');
+    const newArray = [...props.workInfo];
+    // const addNew = newArray.map(workExp => {
+    //   return { ...workExp }
+    // })
+    props.setNewExp([
+      ...props.workInfo,
+      {
+        key: 0,
+        companyName: '',
+        title: '',
+        city: '',
+        fromDate: '',
+        toDate: '',
+        jobDescription: '',
+      },
+    ])
+  
+    console.log(props.workInfo)
   }
-
 
   return (
     <div>

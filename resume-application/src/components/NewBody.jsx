@@ -58,48 +58,52 @@ function NewBody() {
       toDate: '',
       jobDescription: '',
     },
-    {
-      key: 1,
-      companyName: 'State Farm',
-      title: 'Sales Salve',
-      city: 'Nashville',
-      fromDate: '5/18/18',
-      toDate: '6/30/22',
-      jobDescription: 'Testing',
-    },
-    {
-      key: 2,
-      companyName: 'Verizon',
-      title: 'Sales Slave',
-      city: 'Nashville',
-      fromDate: '9/15/17',
-      toDate: '2/22/18',
-      jobDescription: 'More Testing',
-    },
-    {
-      key: 3,
-      companyName: 'Progressive',
-      title: 'Claims Slave',
-      city: 'Nashville',
-      fromDate: '05/16/16',
-      toDate: '07/31/17',
-      jobDescription: 'Lorim Ipsum',
-    },
-    {
-      key: 4,
-      companyName: 'Chappys on Church',
-      title: 'Server',
-      city: 'Nashville',
-      fromDate: '5/18/18',
-      toDate: '6/30/22',
-      jobDescription: 'Testing',
-    },
+    // {
+    //   key: 0,
+    //   companyName: 'State Farm',
+    //   title: 'Sales Salve',
+    //   city: 'Nashville',
+    //   fromDate: '5/18/18',
+    //   toDate: '6/30/22',
+    //   jobDescription: 'Testing',
+    // },
+    // {
+    //   key: 0,
+    //   companyName: 'Verizon',
+    //   title: 'Sales Slave',
+    //   city: 'Nashville',
+    //   fromDate: '9/15/17',
+    //   toDate: '2/22/18',
+    //   jobDescription: 'More Testing',
+    // },
+    // {
+    //   key: 0,
+    //   companyName: 'Progressive',
+    //   title: 'Claims Slave',
+    //   city: 'Nashville',
+    //   fromDate: '05/16/16',
+    //   toDate: '07/31/17',
+    //   jobDescription: 'Lorim Ipsum',
+    // },
+    // {
+    //   key: 0,
+    //   companyName: 'Chappys on Church',
+    //   title: 'Server',
+    //   city: 'Nashville',
+    //   fromDate: '5/18/18',
+    //   toDate: '6/30/22',
+    //   jobDescription: 'Testing',
+    // },
   ])
 
   const updateWorkExp = index => e => {
     const newArray = workExp.map((item, i) => {
       if (index === i) {
-        return { ...item, [e.target.name] : e.target.value };
+        return { 
+          ...item,
+          [e.target.name] : e.target.value,
+          key: i,
+        };
       } else {
         return item;
       }
@@ -163,6 +167,7 @@ function NewBody() {
           // workInfo={workExpInfo}
           workInfo={workExp}
           updateInfo={updateWorkExp}
+          setNewExp={setWorkExp}
           // addNewWorkExp={addNewTest}
           affixWorkInfo={addNew}
           // affixWorkInfo={addNewJobExp}
