@@ -22,15 +22,9 @@ function NewWorkInput(props) {
 
   const addNewTest = e => {
     e.preventDefault();
-    console.log('test');
-    const newArray = [...props.workInfo];
-    // const addNew = newArray.map(workExp => {
-    //   return { ...workExp }
-    // })
     props.setNewExp([
-      ...props.workInfo,
       {
-        key: 0,
+        key: '',
         companyName: '',
         title: '',
         city: '',
@@ -38,8 +32,9 @@ function NewWorkInput(props) {
         toDate: '',
         jobDescription: '',
       },
+      ...props.workInfo,
+      
     ])
-  
     console.log(props.workInfo)
   }
 

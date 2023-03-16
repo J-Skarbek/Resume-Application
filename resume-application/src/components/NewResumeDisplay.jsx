@@ -7,7 +7,7 @@ function NewResumeDisplay(props) {
 
   const displayJobs = () => {
     const newArr = [...props.workExp];
-    const components = newArr.reverse().map((pastJob, i) => {
+    const components = newArr.map((pastJob, i) => {
       // console.table(newArr)
       return <div className={`index-${i}`} key={i}>
           <WorkExp 
