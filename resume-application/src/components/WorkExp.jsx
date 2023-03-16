@@ -16,7 +16,7 @@ function WorkExp(props) {
           </div>
         </div>
         <div className="flex">
-        <p className="prior-company-dates">{props.details.fromDate} - {props.details.toDate}</p>
+        {props.details.fromDate && props.details.toDate && <p className="prior-company-dates">{props.details.fromDate} - {props.details.toDate}</p>}
         </div>
         <div>
           <p className="prior-company-description pr-12 break-all">{props.details.jobDescription}</p>
