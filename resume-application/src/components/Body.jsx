@@ -55,21 +55,23 @@ function Body() {
     },
   ])
 
-  // const updateWorkExp = index => e => {
-  //   const newArray = workExp.map((item, i) => {
-  //     if (index === i) {
-  //       return { 
-  //         ...item,
-  //         [e.target.name] : e.target.value,
-  //         key: i,
-  //       };
-  //     } else {
-  //       return item;
-  //     }
-  //   });
-  //   setWorkExp(newArray);
-  //   // console.log(workExp)
-  // }
+  const updateWorkExp = index => e => {
+    const newArray = workExp.map((item, i) => {
+      if (index === i) {
+        return { 
+          ...item,
+          [e.target.name] : e.target.value,
+          key: i,
+        };
+      } else {
+        return item;
+      }
+    });
+    setWorkExp(newArray);
+    // console.log(workExp)
+  }
+
+  console.log(workExp)
 
   return (
     <div className="body flex justify-evenly my-8 ">
@@ -87,7 +89,7 @@ function Body() {
         </h2>
         <WorkInput
           workInfo={workExp}
-          // updateInfo={updateWorkExp}
+          updateInfo={updateWorkExp}
           setNewExp={setWorkExp}
         />
         {/* <Datepicker

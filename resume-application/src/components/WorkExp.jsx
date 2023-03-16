@@ -3,7 +3,6 @@ import React from 'react';
 function WorkExp(props) {
   // console.log(props.details)
   
-
   return (
     <div className="flex-column">
         <div className="flex justify-between">

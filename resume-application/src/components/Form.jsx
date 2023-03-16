@@ -59,8 +59,7 @@ function Form(props) {
         onChange={props.updateInfo}
         value={props.details.jobDescription}
         />
-        <button type="button">Add</button>
-        <button type="button">Test/Delete</button>
+        {/* <button type="button" className="bg-white" onClick={props.addNewJob}>Testing Add new work exp</button> */}
       </form>
     </div>
   )
