@@ -1,8 +1,24 @@
 import React from 'react';
 import reactIcon from '../assets/react.svg';
+import WorkExp from './WorkExp';
 import '../styles/ResumeDisplay.css';
 
 function ResumeDisplay(props) {
+
+  const displayJobs = () => {
+    const newArr = [...props.workExp];
+    const components = newArr.map((pastJob, i) => {
+      // console.table(newArr)
+      return <div className={`index-${i}`} key={i}>
+          <WorkExp 
+          details={pastJob}
+          index={i}
+          />
+      </div>
+      })
+    // console.table(newArr)
+    return components;
+  }
 
   return (
     <div className="display-info flex-column">
@@ -17,26 +33,7 @@ function ResumeDisplay(props) {
           <h3>About</h3>
           <p>{props.generalInfoData.description}</p>
           <h3>Experience</h3>
-            <div className="prior-job-details">
-              <div className="flex justify-between">
-                <div className="text-details flex-column justify-start font-semibold">
-                  <p className="prior-comapny-title">{props.workInfo.title}</p>
-                  <p className="prior-company-name">{props.workInfo.companyName}</p>
-                </div>
-                <div>
-                  <p className="prior-company-city">{props.workInfo.city}</p>
-                </div>
-              </div>
-              <div className="flex">
-                {props.workInfo.fromDate && <p className="prior-company-dates">
-                  {props.workInfo.fromDate} - {props.workInfo.toDate}
-                </p>}
-              </div>
-              <div>
-                <p className="prior-company-description pr-12 break-words">{props.workInfo.jobDescription}</p>
-              </div>
-              <div>{props.displayJobs}</div>
-            </div>
+          { displayJobs() }
           <h3>Education</h3>
           <p>{props.generalInfoData.education}</p>
         </div>

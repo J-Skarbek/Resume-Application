@@ -5,8 +5,6 @@ function Form(props) {
   return (
     <div className="work-exp">
       <form className="general-info">
-      {/* <form className="general-info" onSubmit={props.submit}> */}
-      {/*seem to be getting error about uncontrolled to controlled comps on the title input*/}
         <label htmlFor="position">Position</label>
         <input 
         type="text"
@@ -41,9 +39,7 @@ function Form(props) {
         id="fromDate"
         placeholder="Ex. 01/22/2016"
         onChange={props.updateInfo}
-        // onChange={props.Change}
         value={props.details.fromDate}
-        // value={props.dateValue}
         />
         <label htmlFor="toDate">To:</label>
         <input 
@@ -52,9 +48,7 @@ function Form(props) {
         id="toDate"
         placeholder="Ex. 07/31/2022"
         onChange={props.updateInfo}
-        // onChange={props.Change}
         value={props.details.toDate}
-        // value={props.dateValue}
         />        
         <label htmlFor="jobDescription">Job Details</label>
         <input 
@@ -65,11 +59,9 @@ function Form(props) {
         onChange={props.updateInfo}
         value={props.details.jobDescription}
         />
-        <button type="button" onClick={props.affixdetails}>Add</button>
-        <div>{props.displayJobs}</div>
+        <button type="button">Add</button>
         <button type="button">Test/Delete</button>
       </form>
-    {/* <div>{props.newField}</div> */}
     </div>
   )
 }
