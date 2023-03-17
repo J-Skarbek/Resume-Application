@@ -19,9 +19,11 @@ function WorkInput(props) {
   //   console.log(props.workInfo)
   // }
 
+  
   const addNewJob = e => {
     e.preventDefault();
     props.setNewExp([
+      ...props.workInfo,
       {
         key: '',
         companyName: '',
@@ -31,14 +33,19 @@ function WorkInput(props) {
         toDate: '',
         jobDescription: '',
       },
-      ...props.workInfo,
     ])
   }
 
-  const deleteJob = e => {
+
+
+  const deleteJob = index => e => {
     e.preventDefault();
     console.log('testing delete')
+    const test = props.workInfo.filter(job => job.title !== props.workInfo.title);
+    props.setNewExp(test);
+    console.log(props.workInfo)
   }
+  
 
   const displayForms = () => {
     // const newArr = [...props.workInfo];
@@ -49,7 +56,7 @@ function WorkInput(props) {
           index={i}
           updateInfo={props.updateInfo(i)}
           addNewJob={addNewJob}
-          deleteJob={deleteJob}
+          deleteJob={deleteJob(i)}
           />
       </div>
       })
