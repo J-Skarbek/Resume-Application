@@ -33,29 +33,23 @@ function WorkInput(props) {
       },
       ...props.workInfo,
     ])
-    console.log(props.workInfo)
   }
 
-  //test function to insert at:
-
-  // const handleClick = () => {
-  //   const insertAt = i;
-  //   const updateArr = [
-  //     ...workExp.slice(0, insertAt),
-  //     { key: i , title: value, },
-  //     ...workExp.slice(insertAt)
-  //   ] 
-  // }
+  const deleteJob = e => {
+    e.preventDefault();
+    console.log('testing delete')
+  }
 
   const displayForms = () => {
-    const newArr = [...props.workInfo];
-    const formFields = newArr.map((pastJob, i) => {
+    // const newArr = [...props.workInfo];
+    const formFields = props.workInfo.map((pastJob, i) => {
       return <div className={`index-${i}`} key={i}>
           <Form 
           details={pastJob}
           index={i}
           updateInfo={props.updateInfo(i)}
           addNewJob={addNewJob}
+          deleteJob={deleteJob}
           />
       </div>
       })
