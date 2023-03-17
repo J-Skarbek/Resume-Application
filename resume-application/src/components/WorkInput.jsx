@@ -1,5 +1,5 @@
 import React from 'react';
-import WorkExpForm from './Form';
+import WorkExpForm from './WorkExpForm';
 
 function WorkInput(props) {
  

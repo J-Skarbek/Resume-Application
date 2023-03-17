@@ -1,6 +1,7 @@
 import React from 'react';
 import reactIcon from '../assets/react.svg';
 import WorkExp from './WorkExp';
+import EducationalExp from './EducationalExp';
 import '../styles/ResumeDisplay.css';
 
 function ResumeDisplay(props) {

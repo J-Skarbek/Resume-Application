@@ -3,6 +3,7 @@ import React from 'react';
 import GeneralInfo from './GeneralInfo';
 import ResumeDisplay from './ResumeDisplay';
 import WorkInput from './WorkInput';
+import EducationalInput from './EducationalInput';
 
 function Body() {
 
@@ -122,6 +123,18 @@ function Body() {
          />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience
+        </h2>
+        <WorkInput
+          workInfo={workExp}
+          updateInfo={updateWorkExp}
+          setNewExp={setWorkExp}
+        />
+        {/* <Datepicker
+          value={dayPicker}
+          onChange={handleDayChange}
+        /> */}
+         <h2 className="font-bold text-white text-3xl mt-12 mb-4">
+          Educational Experience
         </h2>
         <WorkInput
           workInfo={workExp}
