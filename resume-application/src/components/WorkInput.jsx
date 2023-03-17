@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import WorkExpForm from './Form';
 
 function WorkInput(props) {
  
@@ -36,22 +36,17 @@ function WorkInput(props) {
     ])
   }
 
-
-
   const deleteJob = index => e => {
     e.preventDefault();
-    console.log('testing delete')
     const test = props.workInfo.filter(job => job.key !== index);
     props.setNewExp(test);
-    console.log(props.workInfo)
+    // console.log(props.workInfo)
   }
   
-
   const displayForms = () => {
-    // const newArr = [...props.workInfo];
     const formFields = props.workInfo.map((pastJob, i) => {
       return <div className={`index-${i}`} key={i}>
-          <Form 
+          <WorkExpForm
           details={pastJob}
           index={i}
           updateInfo={props.updateInfo(i)}

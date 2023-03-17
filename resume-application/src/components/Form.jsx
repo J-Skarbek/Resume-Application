@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form(props) {
+function WorkExpForm(props) {
 
   return (
     <div className="work-exp">
@@ -65,4 +65,4 @@ function Form(props) {
   )
 }
 
-export default Form;
+export default WorkExpForm;
