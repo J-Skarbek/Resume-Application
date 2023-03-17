@@ -41,7 +41,7 @@ function WorkInput(props) {
   const deleteJob = index => e => {
     e.preventDefault();
     console.log('testing delete')
-    const test = props.workInfo.filter(job => job.title !== props.workInfo.title);
+    const test = props.workInfo.filter(job => job.key !== index);
     props.setNewExp(test);
     console.log(props.workInfo)
   }
