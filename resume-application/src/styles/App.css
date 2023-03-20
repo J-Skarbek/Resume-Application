@@ -6,11 +6,11 @@
 } */
 
 .app-bg {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  background: linear-gradient(-45deg, #F72A8B, #B168FF, #233275, #110C35);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: fit-content;
-  padding-bottom: 2%;
 }
 
 @keyframes gradient {
