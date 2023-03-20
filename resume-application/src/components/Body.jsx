@@ -54,42 +54,6 @@ function Body() {
       toDate: '',
       jobDescription: '',
     },
-    // {
-    //   key: '',
-    //   companyName: '',
-    //   title: '',
-    //   city: '',
-    //   fromDate: '',
-    //   toDate: '',
-    //   jobDescription: '',
-    // },
-    // {
-    //   key: '',
-    //   companyName: '',
-    //   title: '',
-    //   city: '',
-    //   fromDate: '',
-    //   toDate: '',
-    //   jobDescription: '',
-    // },
-    // {
-    //   key: '',
-    //   companyName: '',
-    //   title: '',
-    //   city: '',
-    //   fromDate: '',
-    //   toDate: '',
-    //   jobDescription: '',
-    // },
-    // {
-    //   key: '',
-    //   companyName: '',
-    //   title: '',
-    //   city: '',
-    //   fromDate: '',
-    //   toDate: '',
-    //   jobDescription: '',
-    // },
   ])
 
   const updateWorkExp = index => e => {
@@ -108,7 +72,36 @@ function Body() {
     // console.log(workExp)
   }
 
-  console.log(workExp)
+  const [eduExp, setEduExp] = React.useState([
+    {
+      key: '',
+      companyName: '',
+      title: '',
+      city: '',
+      fromDate: '',
+      toDate: '',
+      jobDescription: '',
+    },
+  ])
+
+  const updateEduExp = index => e => {
+    const newArray = workExp.map((item, i) => {
+      if (index === i) {
+        return { 
+          ...item,
+          [e.target.name] : e.target.value,
+          key: i,
+        };
+      } else {
+        return item;
+      }
+    });
+    setEduExp(newArray);
+    // console.log(eduExp)
+  }
+
+  // console.log(`Education: ${eduExp}`)
+  // console.log(`Work: ${workExp}`)
 
   return (
     <div className="body flex justify-evenly my-8 h-screen">
@@ -136,10 +129,10 @@ function Body() {
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Educational Experience
         </h2>
-        <WorkInput
-          workInfo={workExp}
-          updateInfo={updateWorkExp}
-          setNewExp={setWorkExp}
+        <EducationalInput
+          educationInfo={eduExp}
+          updateInfo={updateEduExp}
+          setNewEduExp={setEduExp}
         />
         {/* <Datepicker
           value={dayPicker}
@@ -150,6 +143,7 @@ function Body() {
         <ResumeDisplay
           generalInfoData={generalInfo}
           workExp={workExp}
+          educationInfo={eduExp}
         />
       </div>
     </div>

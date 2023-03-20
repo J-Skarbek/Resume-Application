@@ -21,6 +21,21 @@ function ResumeDisplay(props) {
     return components;
   }
 
+  const displayEducation = () => {
+    const newArr = [...props.educationInfo];
+    const components = newArr.map((pastEduExp, i) => {
+      // console.table(newArr)
+      return <div className={`index-${i}`} key={i}>
+          <EducationalExp 
+          details={pastEduExp}
+          index={i}
+          />
+      </div>
+      })
+    // console.table(newArr)
+    return components;
+  }
+
   return (
     <div className="display-info flex-column">
       <div className="resume-header bg-white/25 p-6 shadow-md text-white capitalize">
@@ -36,7 +51,8 @@ function ResumeDisplay(props) {
           <h3>Experience</h3>
           { displayJobs() }
           <h3>Education</h3>
-          <p>{props.generalInfoData.education}</p>
+          { displayEducation() }
+          {/* <p>{props.generalInfoData.education}</p> */}
         </div>
         <div className="resume-sidebar flex-column px-8">
           <img src={reactIcon} alt="just a placeholder for now" />

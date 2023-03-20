@@ -44,10 +44,10 @@ function EducationalInput(props) {
   }
   
   const displayForms = () => {
-    const formFields = props.workInfo.map((pastJob, i) => {
+    const formFields = props.educationInfo.map((pastEduExp, i) => {
       return <div className={`index-${i}`} key={i}>
           <EduExpForm
-          details={pastJob}
+          details={pastEduExp}
           index={i}
           updateInfo={props.updateInfo(i)}
           addNewJob={addNewJob}
