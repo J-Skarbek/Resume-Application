@@ -1,5 +1,5 @@
 import React from 'react';
-import EduExpForm from './WorkExpForm';
+import EduExpForm from './EduExpForm';
 
 function EducationalInput(props) {
  
@@ -43,7 +43,7 @@ function EducationalInput(props) {
     // console.log(props.workInfo)
   }
   
-  const displayForms = () => {
+  const displayFormsEdu = () => {
     const formFields = props.educationInfo.map((pastEduExp, i) => {
       return <div className={`index-${i}`} key={i}>
           <EduExpForm
@@ -55,12 +55,13 @@ function EducationalInput(props) {
           />
       </div>
       })
+    console.log(props.educationInfo);
     return formFields;
   }
 
   return (
     <div>
-      { displayForms() }
+      { displayFormsEdu() }
       <button type="button" className="bg-white" onClick={addNewJob}>Testing Add new work exp</button>
     </div>
   )

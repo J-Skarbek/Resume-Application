@@ -75,12 +75,12 @@ function Body() {
   const [eduExp, setEduExp] = React.useState([
     {
       key: '',
-      companyName: '',
-      title: '',
+      universityName: '',
       city: '',
+      degree: '',
+      major: '',
       fromDate: '',
       toDate: '',
-      jobDescription: '',
     },
   ])
 

@@ -3,27 +3,18 @@ import React from "react";
 function EduExpForm(props) {
 
   return (
-    <div className="work-exp">
+    <div className="edu-exp">
       <form className="general-info">
-        <label htmlFor="position">Position</label>
+        <label htmlFor="position">University Name</label>
         <input 
         type="text"
-        name="title"
-        id="position"
-        placeholder="position"
+        name="universityName"
+        id="universityName"
+        placeholder="University Name"
         onChange={props.updateInfo}
-        value={props.details.title}
+        value={props.details.universityName}
         />
-        <label htmlFor="company">Company</label>
-        <input 
-        type="text"
-        name="companyName"
-        id="company"
-        placeholder="company"
-        onChange={props.updateInfo}
-        value={props.details.companyName}
-        />
-        <label htmlFor="city">City</label>
+        <label htmlFor="company">City</label>
         <input 
         type="text"
         name="city"
@@ -31,6 +22,24 @@ function EduExpForm(props) {
         placeholder="City"
         onChange={props.updateInfo}
         value={props.details.city}
+        />
+        <label htmlFor="city">Degree</label>
+        <input
+        type="text"
+        name="degree"
+        id="degree"
+        placeholder="Degree"
+        onChange={props.updateInfo}
+        value={props.details.degree}
+        />
+        <label htmlFor="major">Major</label>
+         <input 
+        type="text"
+        name="major"
+        id="major"
+        placeholder="Enter details about the position here..."
+        onChange={props.updateInfo}
+        value={props.details.major}
         />
         <label htmlFor="fromDate">From:</label>
         <input 
@@ -50,15 +59,6 @@ function EduExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.toDate}
         />        
-        <label htmlFor="jobDescription">Job Details</label>
-        <input 
-        type="textarea"
-        name="jobDescription"
-        id="jobDescription"
-        placeholder="Enter details about the position here..."
-        onChange={props.updateInfo}
-        value={props.details.jobDescription}
-        />
         <button type="button" className="bg-white my-12" onClick={props.deleteJob}>Delete Job</button>
       </form>
     </div>
