@@ -85,7 +85,7 @@ function Body() {
   ])
 
   const updateEduExp = index => e => {
-    const newArray = workExp.map((item, i) => {
+    const newArray = eduExp.map((item, i) => {
       if (index === i) {
         return { 
           ...item,
@@ -100,7 +100,7 @@ function Body() {
     // console.log(eduExp)
   }
 
-  // console.log(`Education: ${eduExp}`)
+  // console.table(`Education: ${eduExp}`)
   // console.log(`Work: ${workExp}`)
 
   return (
