@@ -111,8 +111,8 @@ function Body() {
   console.log(workExp)
 
   return (
-    <div className="body flex justify-evenly my-8 ">
-      <div className="left-side">
+    <div className="body flex justify-evenly my-8 h-screen">
+      <div className="left-side overflow-y-auto">
         <h2 className="font-bold text-white text-3xl mb-4">
           Personal Information
         </h2>
