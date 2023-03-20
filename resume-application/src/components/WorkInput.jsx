@@ -34,13 +34,14 @@ function WorkInput(props) {
         jobDescription: '',
       },
     ])
+    console.log(props.workInfo)
   }
 
   const deleteJob = index => e => {
     e.preventDefault();
     const test = props.workInfo.filter(job => job.key !== index);
     props.setNewExp(test);
-    // console.log(props.workInfo)
+    console.log(props.workInfo)
   }
   
   const displayForms = () => {

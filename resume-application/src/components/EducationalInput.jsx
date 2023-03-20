@@ -26,21 +26,22 @@ function EducationalInput(props) {
       ...props.educationInfo,
       {
         key: '',
-        companyName: '',
-        title: '',
+        universityName: '',
         city: '',
+        degree: '',
+        major: '',
         fromDate: '',
         toDate: '',
-        jobDescription: '',
       },
     ])
+    console.log(props.educationInfo)
   }
 
   const deleteEducation = index => e => {
     e.preventDefault();
     const test = props.educationInfo.filter(school => school.key !== index);
     props.setNewEduExp(test);
-    // console.log(props.workInfo)
+    console.log(props.educationInfo)
   }
   
   const displayFormsEdu = () => {
