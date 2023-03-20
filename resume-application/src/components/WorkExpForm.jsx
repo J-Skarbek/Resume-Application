@@ -32,7 +32,7 @@ function WorkExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.city}
         />
-        <label htmlFor="fromDate">From:</label>
+        <label htmlFor="fromDate">Start Date:</label>
         <input 
         type="text"
         name="fromDate"
@@ -41,7 +41,7 @@ function WorkExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.fromDate}
         />
-        <label htmlFor="toDate">To:</label>
+        <label htmlFor="toDate">Finish Date:</label>
         <input 
         type="text"
         name="toDate"

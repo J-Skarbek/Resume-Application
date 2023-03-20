@@ -41,7 +41,7 @@ function EduExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.major}
         />
-        <label htmlFor="fromDate">From:</label>
+        <label htmlFor="fromDate">Matriculation Date:</label>
         <input 
         type="text"
         name="fromDate"
@@ -50,7 +50,7 @@ function EduExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.fromDate}
         />
-        <label htmlFor="toDate">To:</label>
+        <label htmlFor="toDate">Graduation Date:</label>
         <input 
         type="text"
         name="toDate"
