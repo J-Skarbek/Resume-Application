@@ -20,10 +20,10 @@ function EducationalInput(props) {
   // }
 
   
-  const addNewJob = e => {
+  const addNewSchool = e => {
     e.preventDefault();
-    props.setNewExp([
-      ...props.workInfo,
+    props.setNewEduExp([
+      ...props.educationInfo,
       {
         key: '',
         companyName: '',
@@ -50,7 +50,6 @@ function EducationalInput(props) {
           details={pastEduExp}
           index={i}
           updateInfo={props.updateInfo(i)}
-          addNewJob={addNewJob}
           deleteJob={deleteEducation(i)}
           />
       </div>
@@ -62,7 +61,7 @@ function EducationalInput(props) {
   return (
     <div>
       { displayFormsEdu() }
-      <button type="button" className="bg-white" onClick={addNewJob}>Add New Education</button>
+      <button type="button" className="bg-white" onClick={addNewSchool}>Add New Education</button>
     </div>
   )
 }
