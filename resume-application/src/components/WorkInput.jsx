@@ -61,7 +61,7 @@ function WorkInput(props) {
   return (
     <div>
       { displayForms() }
-      <button type="button" className="bg-white" onClick={addNewJob}>Testing Add new work exp</button>
+      <button type="button" className="bg-white" onClick={addNewJob}>Add Job</button>
     </div>
   )
 }

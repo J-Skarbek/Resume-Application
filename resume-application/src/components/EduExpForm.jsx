@@ -59,7 +59,7 @@ function EduExpForm(props) {
         onChange={props.updateInfo}
         value={props.details.toDate}
         />        
-        <button type="button" className="bg-white my-12" onClick={props.deleteJob}>Delete Job</button>
+        <button type="button" className="bg-white my-12" onClick={props.deleteJob}>Delete Education</button>
       </form>
     </div>
   )
