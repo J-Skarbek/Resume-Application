@@ -44,7 +44,7 @@ function ResumeDisplay(props) {
         </h2>
         <p className="font-normal text-3xl">{props.generalInfoData.title}</p>
       </div>
-      <div className="resume-body flex flex-col sm:flex-row bg-white/25 py-6 text-white">
+      <div className="resume-body flex flex-col lg:flex-row bg-white/25 py-6 text-white">
         <div className="resume-detailed-text flex-column px-8 text-xl w-[75%]">
           <h3>About</h3>
           <p>{props.generalInfoData.description}</p>

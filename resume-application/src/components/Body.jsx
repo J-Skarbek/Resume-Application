@@ -104,8 +104,8 @@ function Body() {
   // console.log(`Work: ${workExp}`)
 
   return (
-    <div className="body flex flex-col sm:flex-row justify-evenly my-8 px-12 sm:h-screen">
-      <div className="left-side w-full sm:w-1/3 overflow-y-auto sm:px-8">
+    <div className="body flex flex-col sm:flex-row justify-evenly my-8 md:px-1 lg:px-12 sm:h-screen">
+      <div className="left-side w-full sm:w-1/2 md:w-1/3 overflow-y-auto px-4 md:px-0">
         <h2 className="font-bold text-white text-3xl mb-4">
           Personal Information
         </h2>
@@ -139,7 +139,7 @@ function Body() {
           onChange={handleDayChange}
         /> */}
       </div>
-      <div className="right-side sm:px-2 mt-8 sm:mt-0 w-full overflow-y-auto sm:w-2/3 min-h-fit">
+      <div className="right-side px-4 md:px-0 mt-8 sm:mt-0 w-full overflow-y-auto sm:w-1/2 md:2/3 min-h-fit">
         <ResumeDisplay
           generalInfoData={generalInfo}
           workExp={workExp}
