@@ -73,7 +73,7 @@ function GeneralInfo(props) {
         type="textarea"
         name="description"
         id="description"
-        placeholder="Enter details about the position here..."
+        placeholder="Enter Details About Yourself Here..."
         onChange={props.click}
         value={props.generalInfoData.description}
         />
