@@ -108,31 +108,49 @@ function Body() {
     }
   ])
 
-  // const updateSkills = e => {
-  //   const { name, value } = e.target;
-  //   setSkill(prev => {
-  //     return {
-  //       ...prev,
-  //       [name]: value
-  //     }
-  //   })
+  const updateSkills = e => {
+    const { name, value } = e.target;
+    setSkill(prev => {
+      return [{
+        // ...prev,
+        [name]: value
+      }]
+        // // ...prev,
+        // [name]: value
+      }
+    )
+    console.log(skill)
+  }
+
+  //testing a function to push new individual skills to array
+  const [skillsArray, setSkillsArray] = React.useState([]);
+
+  const addNewSkillToArray = () => {
+    setSkillsArray(prev => {
+      return [
+        ...prev,
+        {
+          skill: skill.skill,
+        }
+      ]
+    })
+  }
+
+  // const updateSkills = index => e => {
+  //   const skillsArray = skill.map((skill, i) => {
+  //     if (index === 1) {
+  //       return {
+  //         ...skill,
+  //         [e.target.name]: e.target.value,
+  //         key: i,
+  //         }
+  //       } else {
+  //         return skill;
+  //       }
+  //   });
+  //   setSkill(skillsArray);
   //   console.log(skill)
   // }
-
-  const updateSkills = index => e => {
-    const skillsArray = skill.map((skill, i) => {
-      if (index === 1) {
-        return {
-          ...skill,
-          [e.target.name]: e.target.value,
-          key: i,
-          }
-        } else {
-          return skill;
-        }
-    });
-    setSkill(skillsArray);
-  }
 
   //On input, the skill value changes to reflec the user input
   //Then -> when clicking on add, it takes that input and adds it to the 'skills' state array
@@ -144,7 +162,7 @@ function Body() {
 
   // console.table(`Education: ${eduExp}`)
   // console.log(`Work: ${workExp}`)
-  console.log(skill)
+  // console.log(skill)
 
   return (
     <div className="body flex flex-col sm:flex-row justify-evenly my-8 md:px-1 lg:px-12 sm:h-screen">
@@ -166,6 +184,9 @@ function Body() {
           skill={skill}
           updateSkills={updateSkills}
           setSkill={setSkill}
+          //two following props are tests -- may need to be deleted
+          allSkills={skillsArray}
+          pushNewSkill={setSkillsArray}
         />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience

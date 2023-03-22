@@ -55,7 +55,7 @@ function EducationalInput(props) {
           />
       </div>
       })
-    console.log(props.educationInfo);
+    // console.log(props.educationInfo);
     return formFields;
   }
 
