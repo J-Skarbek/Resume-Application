@@ -4,6 +4,7 @@ import GeneralInfo from './GeneralInfo';
 import ResumeDisplay from './ResumeDisplay';
 import WorkInput from './WorkInput';
 import EducationalInput from './EducationalInput';
+import InputSkills from './SkillsInput';
 
 function Body() {
 
@@ -131,6 +132,13 @@ function Body() {
           skills={skill}
           updateSkills={updateSkills}
          />
+         <h2 className="font-bold text-white text-3xl mb-4">
+          Skills
+        </h2>
+        <InputSkills
+          skills={skill}
+          updateSkills={updateSkills} 
+        />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience
         </h2>
