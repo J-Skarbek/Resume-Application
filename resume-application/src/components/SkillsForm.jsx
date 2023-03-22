@@ -14,7 +14,7 @@ function SkillsForm(props) {
         onChange={props.updateSkills}
         value={props.skill}
         />
-        <button>Add</button>
+        <button onClick={props.addNewSkill}>Add Skill</button>
       </form>
     </div>
   );

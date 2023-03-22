@@ -90,7 +90,7 @@ function Body() {
       if (index === i) {
         return { 
           ...item,
-          [e.target.name] : e.target.value,
+          [e.target.name]: e.target.value,
           key: i,
         };
       } else {
@@ -101,24 +101,50 @@ function Body() {
     // console.log(eduExp)
   }
 
-  const [skill, setSkill] = React.useState({
-    key: '',
-    skill: ''
-  })
+  const [skill, setSkill] = React.useState([
+    {
+      key: '',
+      skill: ''
+    }
+  ])
 
-  const updateSkills = e => {
-    const { name, value } = e.target;
-    setSkill(prev => {
-      return {
-        ...prev,
-        [name]: value
-      }
-    })
-    console.log(skill)
+  // const updateSkills = e => {
+  //   const { name, value } = e.target;
+  //   setSkill(prev => {
+  //     return {
+  //       ...prev,
+  //       [name]: value
+  //     }
+  //   })
+  //   console.log(skill)
+  // }
+
+  const updateSkills = index => e => {
+    const skillsArray = skill.map((skill, i) => {
+      if (index === 1) {
+        return {
+          ...skill,
+          [e.target.name]: e.target.value,
+          key: i,
+          }
+        } else {
+          return skill;
+        }
+    });
+    setSkill(skillsArray);
   }
+
+  //On input, the skill value changes to reflec the user input
+  //Then -> when clicking on add, it takes that input and adds it to the 'skills' state array
+  //Then -> it clearns the input field
+  //Then -> Resume display component will map over the 'skills' array, and output to the resume
+  //Then -> I'll need to style that div and the individual skills to display as a type of pill display -- adding
+  //an animation when each one is created would be good, quick fade in, something like that to display
+  //them underneath the general info/about you section
 
   // console.table(`Education: ${eduExp}`)
   // console.log(`Work: ${workExp}`)
+  console.log(skill)
 
   return (
     <div className="body flex flex-col sm:flex-row justify-evenly my-8 md:px-1 lg:px-12 sm:h-screen">
@@ -138,7 +164,8 @@ function Body() {
         </h2>
         <InputSkills
           skill={skill}
-          updateSkills={updateSkills} 
+          updateSkills={updateSkills}
+          setSkill={setSkill}
         />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience

@@ -77,7 +77,6 @@ function GeneralInfo(props) {
         onChange={props.click}
         value={props.generalInfoData.description}
         />
-        <button>Add</button>
       </form>
     </div>
   )
