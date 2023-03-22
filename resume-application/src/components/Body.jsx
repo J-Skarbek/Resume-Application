@@ -100,6 +100,21 @@ function Body() {
     // console.log(eduExp)
   }
 
+  const [skill, setSkill] = React.useState({
+    key: '',
+    skill: ''
+  })
+
+  const updateSkills = () => {
+    const { name, value } = e.target;
+    setSkill(prev => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+  }
+
   // console.table(`Education: ${eduExp}`)
   // console.log(`Work: ${workExp}`)
 
@@ -113,6 +128,8 @@ function Body() {
           generalInfoData={generalInfo}
           click={handleChange}
           submit={handleSubmit}
+          skills={skill}
+          updateSkills={updateSkills}
          />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">
           Work Experience
