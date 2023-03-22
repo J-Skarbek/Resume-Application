@@ -106,7 +106,7 @@ function Body() {
     skill: ''
   })
 
-  const updateSkills = () => {
+  const updateSkills = e => {
     const { name, value } = e.target;
     setSkill(prev => {
       return {
@@ -114,6 +114,7 @@ function Body() {
         [name]: value
       }
     })
+    console.log(skill)
   }
 
   // console.table(`Education: ${eduExp}`)
@@ -136,7 +137,7 @@ function Body() {
           Skills
         </h2>
         <InputSkills
-          skills={skill}
+          skill={skill}
           updateSkills={updateSkills} 
         />
          <h2 className="font-bold text-white text-3xl mt-12 mb-4">

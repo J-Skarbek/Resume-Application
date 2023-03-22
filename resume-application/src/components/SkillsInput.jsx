@@ -4,7 +4,9 @@ import SkillsForm from "./SkillsForm";
 function InputSkills(props) {
 
   return (
-    <SkillsForm 
+    <SkillsForm
+      skills={props.skill}
+      updateSkills={props.updateSkills} 
     />
   );
 }

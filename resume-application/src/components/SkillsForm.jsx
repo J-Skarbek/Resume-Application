@@ -8,12 +8,13 @@ function SkillsForm(props) {
         <label htmlFor="position">Add Skill</label>
         <input 
         type="text"
-        name="title"
+        name="skill"
         id="position"
         placeholder="Javascript, Typescript, Rust, React, etc..."
         onChange={props.updateSkills}
-        value={props.skills}
+        value={props.skill}
         />
+        <button>Add</button>
       </form>
     </div>
   );
